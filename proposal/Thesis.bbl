@@ -1,0 +1,139 @@
+\begin{thebibliography}{10}
+
+\bibitem{stapl_parallel_container}
+Gabriel Tanase, Antal Buss, Adam Fidel, Harshvardhan, Ioannis Papadopoulos,
+  Olga Pearce, Timmie Smith, Nathan Thomas, Xiabing Xu, Nedal Mourad, Jeremy
+  Vu, Mauro Bianco, Nancy~M. Amato, and Lawrence Rauchwerger.
+\newblock The stapl parallel container framework.
+\newblock {\em SIGPLAN Not.}, 46(8):235–246, February 2011.
+
+\bibitem{IDS}
+David Reinsel, John Gantz, and John Rydning.
+\newblock The digitization of the world: From edge to core.
+\newblock {\em International Data Corporation}, page~3, November 2018.
+
+\bibitem{genome_size}
+Scott Christley, Yiming Lu, Chen Li, and Xiaohui Xie.
+\newblock {Human genomes as email attachments}.
+\newblock {\em Bioinformatics}, 25(2):274--275, 09 2008.
+
+\bibitem{virtual_memory_tlb}
+Arkaprava Basu, Jayneel Gandhi, Jichuan Chang, Mark~D. Hill, and Michael~M.
+  Swift.
+\newblock Efficient virtual memory for big memory servers.
+\newblock {\em SIGARCH Comput. Archit. News}, 41(3):237–248, June 2013.
+
+\bibitem{towards_dist_cpp}
+Gordon Brown, Ruyman Reyes, and Michael Wong.
+\newblock Towards heterogeneous and distributed computing in c++.
+\newblock In {\em Proceedings of the International Workshop on OpenCL},
+  IWOCL'19, New York, NY, USA, 2019. Association for Computing Machinery.
+
+\bibitem{STAPL}
+Lawrence Rauchwerger, Francisco Arzu, and Koji Ouchi.
+\newblock Standard templates adaptive parallel library (stapl).
+\newblock In {\em Selected Papers from the 4th International Workshop on
+  Languages, Compilers, and Run-Time Systems for Scalable Computers}, LCR '98,
+  page 402–409, Berlin, Heidelberg, 1998. Springer-Verlag.
+
+\bibitem{practical_dist_c}
+Maurizio Drocco, Vito~Giovanni Castellana, and Marco Minutoli.
+\newblock Practical distributed programming in c++.
+\newblock HPDC '20, page 35–39, New York, NY, USA, 2020. Association for
+  Computing Machinery.
+
+\bibitem{taskflow}
+Chun-Xun Lin, Tsung-Wei Huang, Guannan Guo, and Martin D.~F. Wong.
+\newblock A modern c++ parallel task programming library.
+\newblock In {\em Proceedings of the 27th ACM International Conference on
+  Multimedia}, MM '19, page 2284–2287, New York, NY, USA, 2019. Association
+  for Computing Machinery.
+
+\bibitem{intel_tbb}
+Shameem Akhter and Jason Roberts.
+\newblock {\em Multi-core programming: increasing performance through software
+  multi-threading}.
+\newblock Intel Press, 2006.
+
+\bibitem{parallel_programming_w_charm}
+Bilge Acun, Abhishek Gupta, Nikhil Jain, Akhil Langer, Harshitha Menon, Eric
+  Mikida, Xiang Ni, Michael Robson, Yanhua Sun, Ehsan Totoni, Lukasz
+  Wesolowski, and Laxmikant Kale.
+\newblock Parallel programming with migratable objects: Charm++ in practice.
+\newblock In {\em Proceedings of the International Conference for High
+  Performance Computing, Networking, Storage and Analysis}, SC '14, page
+  647–658. IEEE Press, 2014.
+
+\bibitem{chapel}
+D.~{Callahan}, B.~L. {Chamberlain}, and H.~P. {Zima}.
+\newblock The cascade high productivity language.
+\newblock In {\em Ninth International Workshop on High-Level Parallel
+  Programming Models and Supportive Environments, 2004. Proceedings.}, pages
+  52--60, 2004.
+
+\bibitem{X10}
+Philippe Charles, Christian Grothoff, Vijay Saraswat, Christopher Donawa, Allan
+  Kielstra, Kemal Ebcioglu, Christoph von Praun, and Vivek Sarkar.
+\newblock X10: An object-oriented approach to non-uniform cluster computing.
+\newblock {\em SIGPLAN Not.}, 40(10):519–538, October 2005.
+
+\bibitem{spark}
+J.~{Fu}, J.~{Sun}, and K.~{Wang}.
+\newblock Spark – a big data processing platform for machine learning.
+\newblock In {\em 2016 International Conference on Industrial Informatics -
+  Computing Technology, Intelligent Technology, Industrial Information
+  Integration (ICIICII)}, pages 48--51, 2016.
+
+\bibitem{zookeeper}
+Patrick Hunt, Mahadev Konar, Yahoo Grid, Flavio Junqueira, Benjamin Reed, and
+  Yahoo Research.
+\newblock Zookeeper: Wait-free coordination for internet-scale systems.
+\newblock {\em ATC. USENIX}, 8, 06 2010.
+
+\bibitem{memcached}
+B.~Fitzpatrick.
+\newblock a distributed memory object caching system.
+
+\bibitem{GAM}
+Qingchao Cai, Wentian Guo, Hao Zhang, Divyakant Agrawal, Gang Chen, Beng~Chin
+  Ooi, Kian-Lee Tan, Yong~Meng Teo, and Sheng Wang.
+\newblock Efficient distributed memory management with rdma and caching.
+\newblock {\em Proc. VLDB Endow.}, 11(11):1604–1617, July 2018.
+
+\bibitem{ilp_history}
+B~Ramakrishna Rau and Joseph~A. Fisher.
+\newblock Instruction-level parallel processing: History, overview and
+  perspective.
+\newblock {\em The Journal of Supercomputing}, 7(1), 1993.
+
+\bibitem{hpc_openstax}
+Kevin Dowd and Charles Severance.
+\newblock {\em High Performance Computing Chapter 5}.
+\newblock OpenStax-CNX, 2010.
+
+\bibitem{dist_systems_concepts}
+George~F. Coulouris.
+\newblock {\em Distributed systems: Concepts and design, Chapter 1}.
+\newblock Addison-Wesley, 2011.
+
+\bibitem{async_cpp}
+Lawrence Crowl.
+\newblock An asynchronous call for c++.
+\newblock \url{wg21.link/n2889}.
+
+\bibitem{sharing_cpu_memory}
+{Xiaodong Zhang}, {Yanxia Qu}, and {Li Xiao}.
+\newblock Improving distributed workload performance by sharing both cpu and
+  memory resources.
+\newblock In {\em Proceedings 20th IEEE International Conference on Distributed
+  Computing Systems}, pages 233--241, 2000.
+
+\bibitem{stapl_rts}
+Ioannis Papadopoulos, Nathan Thomas, Adam Fidel, Nancy~M. Amato, and Lawrence
+  Rauchwerger.
+\newblock Stapl-rts: An application driven runtime system.
+\newblock In {\em Proceedings of the 29th ACM on International Conference on
+  Supercomputing}, ICS '15, page 425–434, New York, NY, USA, 2015.
+  Association for Computing Machinery.
+
+\end{thebibliography}

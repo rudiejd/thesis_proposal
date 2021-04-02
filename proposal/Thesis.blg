@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Thesis.aux
+A level-1 auxiliary file: Chapters/Chapter1_Introduction.aux
+A level-1 auxiliary file: Chapters/Chapter2_Background.aux
+A level-1 auxiliary file: Chapters/Chapter3_Overview.aux
+A level-1 auxiliary file: Chapters/Chapter4_ContentA.aux
+A level-1 auxiliary file: Chapters/Chapter5_ContentB.aux
+A level-1 auxiliary file: Chapters/Chapter6_ContentC.aux
+A level-1 auxiliary file: Chapters/Chapter7_Validation.aux
+A level-1 auxiliary file: Chapters/Chapter8_Conclusion.aux
+A level-1 auxiliary file: Appendices/A1.aux
+The style file: unsrt.bst
+Database file #1: Thesis.bib
+Warning--empty booktitle in practical_dist_c
+Warning--empty chapter and pages in hpc_openstax
+Warning--empty chapter and pages in dist_systems_concepts
+You've used 22 entries,
+            1791 wiz_defined-function locations,
+            595 strings with 8305 characters,
+and the built_in function-call counts, 6369 in all, are:
+= -- 549
+> -- 332
+< -- 9
++ -- 119
+- -- 97
+* -- 397
+:= -- 938
+add.period$ -- 71
+call.type$ -- 22
+change.case$ -- 19
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 340
+empty$ -- 573
+format.name$ -- 97
+if$ -- 1510
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 23
+newline$ -- 112
+num.names$ -- 22
+pop$ -- 87
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 238
+stack$ -- 0
+substring$ -- 295
+swap$ -- 146
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 39
+width$ -- 24
+write$ -- 250
+(There were 3 warnings)

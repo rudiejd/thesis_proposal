@@ -1,0 +1,23 @@
+% Encoding: UTF-8
+
+@Article{4218576,
+  author  = {G. {Cordasco} and V. {Scarano} and A. L. {Rosenberg}},
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  title   = {Bounded-Collision Memory-Mapping Schemes for Data Structures with Applications to Parallel Memories},
+  year    = {2007},
+  number  = {7},
+  pages   = {973-982},
+  volume  = {18},
+  doi     = {10.1109/TPDS.2007.1024},
+}
+
+@InProceedings{741145,
+  author    = {T. H. {MacKenzie} and T. I. {Dix}},
+  booktitle = {Proceedings 1998 International Conference on Parallel and Distributed Systems (Cat. No.98TB100250)},
+  title     = {Object-oriented Ease-based parallel primitives in C++},
+  year      = {1998},
+  pages     = {623-630},
+  doi       = {10.1109/ICPADS.1998.741145},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
