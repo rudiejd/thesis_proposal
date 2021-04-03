@@ -30,13 +30,31 @@
 \@writefile{toc}{\contentsline {paragraph}{Parallel Computing}{3}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Distributed Computing}{3}{section*.7}\protected@file@percent }
 \citation{towards_dist_cpp}
-\citation{async_cpp}
+\citation{n1682}
+\citation{n1815}
+\citation{n1875}
+\citation{n1883}
+\citation{n1907}
+\citation{n2043}
+\citation{n2096}
+\citation{n2139}
+\citation{n2178}
+\citation{n2184}
+\citation{n2285}
+\citation{n2889}
+\citation{n2320}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}First-Class Distributed Computing in C++}{4}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Existing Constructs}{4}{section*.8}\protected@file@percent }
+\citation{p0443}
+\citation{towards_dist_cpp}
+\citation{towards_dist_cpp}
+\citation{towards_dist_cpp}
+\@writefile{toc}{\contentsline {paragraph}{Recent attempts}{5}{section*.9}\protected@file@percent }
 \citation{sharing_cpu_memory}
 \citation{virtual_memory_tlb}
 \citation{sharing_cpu_memory}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}First-Class Distributed Computing in C++}{4}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Existing Constructs}{4}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Recent attempts}{4}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Memory in Distributed Applications}{6}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Related Work}{6}{section.2.4}\protected@file@percent }
 \citation{stapl_parallel_container}
 \citation{stapl_parallel_container}
 \citation{STAPL}
@@ -46,32 +64,30 @@
 \citation{stapl_parallel_container}
 \citation{stapl_parallel_container}
 \citation{stapl_rts}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Memory in Distributed Applications}{5}{section.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Related Work}{5}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}STAPL}{5}{subsection.2.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Description}{5}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}STAPL}{7}{subsection.2.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces STAPL Architecture \cite  {stapl_parallel_container}\relax }}{7}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:stapl_arch}{{2.2}{7}{STAPL Architecture \cite {stapl_parallel_container}\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {paragraph}{Description}{7}{section*.12}\protected@file@percent }
 \citation{stapl_parallel_container}
 \citation{parallel_programming_w_charm}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces STAPL Architecture \cite  {stapl_parallel_container}\relax }}{6}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:stapl_arch}{{2.2}{6}{STAPL Architecture \cite {stapl_parallel_container}\relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {paragraph}{Contributions}{6}{section*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Optimizations for memory-bound programs}{6}{section*.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Charm++}{6}{subsection.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Description}{6}{section*.16}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Charm++ Architecture\relax }}{7}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:charm_structure}{{2.3}{7}{Charm++ Architecture\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {paragraph}{Contributions}{7}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}X10}{7}{subsection.2.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces X10 Architecture\relax }}{7}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:x10_arch}{{2.4}{7}{X10 Architecture\relax }{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Chapel}{7}{subsection.2.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Chapel Architecture\relax }}{7}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:chapel_arch}{{2.5}{7}{Chapel Architecture\relax }{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Intel Thread Building Blocks (TBB)}{7}{subsection.2.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces TBB Architecture\relax }}{8}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:tbb_arch}{{2.6}{8}{TBB Architecture\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{Contributions}{8}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Optimizations for memory-bound programs}{8}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Charm++}{8}{subsection.2.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Charm++ Architecture\relax }}{8}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:charm_structure}{{2.3}{8}{Charm++ Architecture\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{Description}{8}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Contributions}{8}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}X10}{9}{subsection.2.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces X10 Architecture\relax }}{9}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:x10_arch}{{2.4}{9}{X10 Architecture\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Chapel}{9}{subsection.2.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Chapel Architecture\relax }}{9}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:chapel_arch}{{2.5}{9}{Chapel Architecture\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Intel Thread Building Blocks (TBB)}{9}{subsection.2.4.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces TBB Architecture\relax }}{9}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:tbb_arch}{{2.6}{9}{TBB Architecture\relax }{figure.caption.20}{}}
 \@setckpt{Chapters/Chapter2_Background}{
-\setcounter{page}{9}
+\setcounter{page}{10}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}

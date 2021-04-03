@@ -116,10 +116,78 @@ George~F. Coulouris.
 \newblock {\em Distributed systems: Concepts and design, Chapter 1}.
 \newblock Addison-Wesley, 2011.
 
-\bibitem{async_cpp}
+\bibitem{n1682}
+Pete Becker.
+\newblock N1682: A multi-threading library for standard c++.
+\newblock \url{wg21.link/n1682}.
+
+\bibitem{n1815}
 Lawrence Crowl.
-\newblock An asynchronous call for c++.
+\newblock N1815: Iso c++ strategic plan for multithreading.
+\newblock \url{wg21.link/n1815}.
+
+\bibitem{n1875}
+Lawrence Crowl.
+\newblock N1875: C++ threads.
+\newblock \url{wg21.link/n1875}.
+
+\bibitem{n1883}
+Kevlin Henney.
+\newblock N1883: Preliminary threading library proposal for tr2.
+\newblock \url{wg21.link/n1883}.
+
+\bibitem{n1907}
+Pete Becker.
+\newblock N1907: A multi-threading library for standard c++, revision 1.
+\newblock \url{wg21.link/n1907}.
+
+\bibitem{n2043}
+Ion Gaztañaga.
+\newblock N2043: Simplifying and extending mutex and scoped lock types for c++
+  multi-threading library.
+\newblock \url{wg21.link/n2043}.
+
+\bibitem{n2096}
+Peter Dimov.
+\newblock N2096: Transporting values and exceptions between threads.
+\newblock \url{wg21.link/n2096}.
+
+\bibitem{n2139}
+Anthony Williams.
+\newblock N2139: Thoughts on a thread library for c++.
+\newblock \url{wg21.link/n2139}.
+
+\bibitem{n2178}
+Thoughts on~a Thread Library~for C++.
+\newblock N2178: Proposed text for chapter 30, thread support library
+  [threads].
+\newblock \url{wg21.link/n2139}.
+
+\bibitem{n2184}
+Howard~E. Hinnant.
+\newblock N2184: Thread launching for c++.
+\newblock \url{wg21.link/n2184}.
+
+\bibitem{n2285}
+Pete Becker.
+\newblock N2285: A multi-threading library for standard c++, revision 2.
+\newblock \url{wg21.link/n2285}.
+
+\bibitem{n2889}
+Lawrence Crowl.
+\newblock N2889: An asynchronous call for c++.
 \newblock \url{wg21.link/n2889}.
+
+\bibitem{n2320}
+Howard~E. Hinnant, Beman Dawes, Lawrence Crowl, Jeff Gardland, and Anthony
+  Williams.
+\newblock N2320: Multi-threading library for standard c++.
+\newblock \url{wg21.link/n2320}.
+
+\bibitem{p0443}
+et.~al. Hoberock.
+\newblock P0443: Multi-threading library for standard c++.
+\newblock \url{wg21.link/p0443}.
 
 \bibitem{sharing_cpu_memory}
 {Xiaodong Zhang}, {Yanxia Qu}, and {Li Xiao}.

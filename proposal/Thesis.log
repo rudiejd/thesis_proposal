@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.16)  1 APR 2021 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.16)  2 APR 2021 22:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -412,103 +412,93 @@ Package pdftex.def Info: Figures/global_data_growth.jpg  used on input line 7.
 
 
 
- <./Figures/global_data_growth.jpg>] [3] [4]
+ <./Figures/global_data_growth.jpg>] [3] [4] [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 37.
+               Default added (so using `tbp') on input line 38.
 
-<Figures/stapl_overview.png, id=337, 344.03531pt x 198.7425pt>
+[6]
+<Figures/stapl_overview.png, id=376, 344.03531pt x 198.7425pt>
 File: Figures/stapl_overview.png Graphic file (type png)
 <use Figures/stapl_overview.png>
-Package pdftex.def Info: Figures/stapl_overview.png  used on input line 66.
+Package pdftex.def Info: Figures/stapl_overview.png  used on input line 65.
 (pdftex.def)             Requested size: 234.8775pt x 135.68289pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6 <./Figures/stapl_overview.png (PNG copy)>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [7] [8] (./Chapters/Chapter3_Overview.tex
+ [7 <./Figures/stapl_overview.png (PNG copy)>] [8]) [9] (./Chapters/Chapter3_Overview.tex
 Chapter 3.
-) [9
+) [10
 
 
 
 
 ] (./Chapters/Chapter4_ContentA.tex
 Chapter 4.
-) [10
+) [11
 
 
 
 
 ] (./Chapters/Chapter5_ContentB.tex
 Chapter 5.
-) [11
+) [12
 
 
 
 
 ] (./Chapters/Chapter6_ContentC.tex
 Chapter 6.
-) [12
+) [13
 
 
 
 
 ] (./Chapters/Chapter7_Validation.tex
 Chapter 7.
-) [13
+) [14
 
 
 
 
 ] (./Chapters/Chapter8_Conclusion.tex
 Chapter 8.
-<Figures/Miami.jpg, id=397, 476.78125pt x 359.3425pt>
+<Figures/Miami.jpg, id=431, 476.78125pt x 359.3425pt>
 File: Figures/Miami.jpg Graphic file (type jpg)
 <use Figures/Miami.jpg>
 Package pdftex.def Info: Figures/Miami.jpg  used on input line 16.
 (pdftex.def)             Requested size: 187.89914pt x 141.61797pt.
-) [14
+) [15
 
 
 
 
  <./Figures/Miami.jpg>] (./Appendices/A1.tex
 Appendix A.
-) [15
+) [16
 
 
 
 
-] (./Thesis.bbl [16
+] (./Thesis.bbl [17
 
 
 
 
-] [17]) [18] (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux) (./Chapters/Chapter3_Overview.aux) (./Chapters/Chapter4_ContentA.aux) (./Chapters/Chapter5_ContentB.aux) (./Chapters/Chapter6_ContentC.aux) (./Chapters/Chapter7_Validation.aux) (./Chapters/Chapter8_Conclusion.aux) (./Appendices/A1.aux))
+] [18]) [19] (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux) (./Chapters/Chapter3_Overview.aux) (./Chapters/Chapter4_ContentA.aux) (./Chapters/Chapter5_ContentB.aux) (./Chapters/Chapter6_ContentC.aux) (./Chapters/Chapter7_Validation.aux) (./Chapters/Chapter8_Conclusion.aux) (./Appendices/A1.aux))
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 50AB610E345CA96E05AC1C610440209C;2555.
  ) 
 Here is how much of TeX's memory you used:
- 8361 strings out of 479383
- 129158 string characters out of 5875830
- 448128 words of memory out of 5000000
- 25133 multiletter control sequences out of 15000+600000
+ 8389 strings out of 479383
+ 129396 string characters out of 5875830
+ 447489 words of memory out of 5000000
+ 25147 multiletter control sequences out of 15000+600000
  411658 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,9n,76p,2403b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,9n,76p,3916b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (25 pages, 341901 bytes).
+Output written on Thesis.pdf (26 pages, 351287 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 522 PDF objects out of 1000 (max. 8388607)
+ 480 compressed objects within 5 object streams
+ 123 named destinations out of 1000 (max. 500000)
  360 words of extra memory for PDF output out of 10000 (max. 10000000)
 

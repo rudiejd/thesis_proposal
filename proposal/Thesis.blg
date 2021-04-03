@@ -15,45 +15,45 @@ Database file #1: Thesis.bib
 Warning--empty booktitle in practical_dist_c
 Warning--empty chapter and pages in hpc_openstax
 Warning--empty chapter and pages in dist_systems_concepts
-You've used 22 entries,
+You've used 35 entries,
             1791 wiz_defined-function locations,
-            595 strings with 8305 characters,
-and the built_in function-call counts, 6369 in all, are:
-= -- 549
-> -- 332
+            642 strings with 9527 characters,
+and the built_in function-call counts, 8051 in all, are:
+= -- 680
+> -- 397
 < -- 9
-+ -- 119
-- -- 97
-* -- 397
-:= -- 938
-add.period$ -- 71
-call.type$ -- 22
-change.case$ -- 19
++ -- 149
+- -- 114
+* -- 406
+:= -- 1197
+add.period$ -- 110
+call.type$ -- 35
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 340
-empty$ -- 573
-format.name$ -- 97
-if$ -- 1510
+cite$ -- 38
+duplicate$ -- 405
+empty$ -- 807
+format.name$ -- 114
+if$ -- 1910
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 35
 missing$ -- 23
-newline$ -- 112
-num.names$ -- 22
-pop$ -- 87
+newline$ -- 177
+num.names$ -- 35
+pop$ -- 152
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 238
+skip$ -- 303
 stack$ -- 0
 substring$ -- 295
-swap$ -- 146
+swap$ -- 159
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 39
-width$ -- 24
-write$ -- 250
+while$ -- 52
+width$ -- 37
+write$ -- 367
 (There were 3 warnings)
