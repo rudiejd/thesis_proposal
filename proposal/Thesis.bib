@@ -295,11 +295,11 @@ keywords = {atomic blocks, data distribution, productivity, partitioned global a
 
 
 
- @misc{memcached, 
+@misc{memcached, 
  title={a distributed memory object caching system}, url={https://www.memcached.org/}, 
  journal={memcached}, 
  author={Fitzpatrick, B.}
- } 
+} 
  
  @INPROCEEDINGS{spark,
   author={J. {Fu} and J. {Sun} and K. {Wang}},
@@ -476,3 +476,98 @@ series = {ICS '15}
 }
 
 
+@inproceedings{stapl_parray,
+author = {Tanase, Gabriel and Bianco, Mauro and Amato, Nancy M. and Rauchwerger, Lawrence},
+title = {The STAPL PArray},
+year = {2007},
+isbn = {9781595938077},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi-org.proxy.lib.miamioh.edu/10.1145/1327171.1327180},
+doi = {10.1145/1327171.1327180},
+abstract = {The Standard Template Adaptive Parallel Library (STAPL) is a parallel programming framework that extends C++ and STL with support for parallelism. STAPL provides parallel data structures (pContainers) and generic parallel algorithms (pAlgorithms), and a methodology for extending them to provide customized functionality. STAPL pContainers are thread-safe, concurrent objects, i.e., shared objects that provide parallel methods that can be invoked concurrently. They provide views as a generic means to access data that can be passed as input to generic pAlgorithms.In this work, we present the STAPL pArray, the parallel equivalent of the sequential STL valarray, a fixed-size data structure optimized for storing and accessing data based on one-dimensional indices. We describe the pArray design and show how it can support a variety of underlying data distribution policies currently available in STAPL, such as blocked or blocked cyclic. We provide experimental results showing that pAlgorithms using the pArray scale well to more than 2,000 processors. We also provide results using different data distributions that illustrate that the performance of pAlgorithms and pArray methods is usually sensitive to the underlying data distribution, and moreover, that there is no one data distribution that performs best for all pAlgorithms, processor counts, or machines.},
+booktitle = {Proceedings of the 2007 Workshop on MEmory Performance: DEaling with Applications, Systems and Architecture},
+pages = {73–80},
+numpages = {8},
+location = {Brasov, Romania},
+series = {MEDEA '07}
+}
+
+@inproceedings{stapl_graph,
+author = {Harshvardhan and Amato, Nancy M. and Rauchweger, Lawrence},
+title = {Processing Big Data Graphs on Memory-Restricted Systems},
+year = {2014},
+isbn = {9781450328098},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi-org.proxy.lib.miamioh.edu/10.1145/2628071.2671429},
+doi = {10.1145/2628071.2671429},
+abstract = {With the advent of big-data, processing large graphs quickly has become increasingly important. Most existing approaches either utilize in-memory processing techniques, which can only process graphs that fit completely in RAM, or disk-based techniques that sacrifice performance.In this work, we propose a novel RAM-Disk hybrid approach to graph processing that can scale well from a single shared-memory node to large distributed-memory systems. It works by partitioning the graph into subgraphs that fit in RAM and uses a paging-like technique to load subgraphs. We show that without modifying the algorithms, this approach can scale from small memory-constrained systems (such as tablets) to large-scale distributed machines with 16,000+ cores.},
+booktitle = {Proceedings of the 23rd International Conference on Parallel Architectures and Compilation},
+pages = {517–518},
+numpages = {2},
+keywords = {out-of-core graph algorithms, parallel graph processing, distributed computing, graph analytics, big data},
+location = {Edmonton, AB, Canada},
+series = {PACT '14}
+}
+
+@misc{euler_1,
+	title={Project Euler: Problem 1},
+	howpublished={\url{projecteuler.net/problem=1}}
+}
+
+@misc{stapl_gitlab,
+	title={Gitlab.com: Standard Adaptive Parallel Templating Library},
+	howpublished={\url{gitlab.com/parasol-lab/stapl}}
+}
+
+@inproceedings{10.1145/165854.165874,
+author = {Kale, Laxmikant V. and Krishnan, Sanjeev},
+title = {CHARM++: A Portable Concurrent Object Oriented System Based on C++},
+year = {1993},
+isbn = {0897915879},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/165854.165874},
+doi = {10.1145/165854.165874},
+booktitle = {Proceedings of the Eighth Annual Conference on Object-Oriented Programming Systems, Languages, and Applications},
+pages = {91–108},
+numpages = {18},
+location = {Washington, D.C., USA},
+series = {OOPSLA '93}
+}
+
+  
+
+@article{charm_93,
+author = {Kale, Laxmikant V. and Krishnan, Sanjeev},
+title = {CHARM++: A Portable Concurrent Object Oriented System Based on C++},
+year = {1993},
+issue_date = {Oct. 1, 1993},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {28},
+number = {10},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/167962.165874},
+doi = {10.1145/167962.165874},
+journal = {SIGPLAN Not.},
+month = oct,
+pages = {91–108},
+numpages = {18}
+}
+
+  
+@article{charm_rts,
+    author  = "L. V. Kal{\'e} and B. Ramkumar and A. B. Sinha and V. A. Saletore",
+    title   = "{The CHARM Parallel Programming Language and System:
+            Part II -- The Runtime system}",
+    journal = "Parallel Programming Laboratory Technical Report \#95-03",
+    year    = 1994
+}
+
+
+@misc{charm_tutorial,
+	title={Charm++: Tutorial},
+	howpublished={\url{charmplusplus.org/CharmConcepts.html}}
+}

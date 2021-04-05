@@ -17,20 +17,35 @@ C++ is one of the most popular languages for distributed computing solutions, pa
 Before detailing the most prominent continuing projects in this space, it is important to draw a distinction between parallel and distributed computing. In order to do that, clear definitions for parallel and distributed computing must be provided. While this thesis project will primarily be geared toward distributed applications running in high-performance computing (HPC) settings, it will also attempt to exploit parallelism, so understanding both is essential for a holistic view of the space in which the proposed project will exist. Definitions included below are a mixture of universal standards used in literature and what will be considered distributed/parallel computing for the purposes of this project.
 
 \paragraph{Parallel Computing}
-There are two main modes of parallelism in parallel computing: instruction-level parallelism and thread-level parallelism. Instruction-level parallelism refers to design techniques at the processor/compiler level that speed the execution of sequential programs by allowing individual machine instructions, e.g. additions, floating point multiplications, memory stores/loads, to execute in parallel \cite{ilp_history}. This is typically done using different components of a processor to perform different parts of a given instruction at the same time. Modern processors typically have, at the very least, several floating point units and several integer units, which can handle different parts of the same instruction. The main distinction between instruction-level parallelism and thread-level parallelism is that instruction-level parallelism occurs at the processor level whereas thread-level parallelism exploits concurrency among multiple processors within the same computer \cite{hpc_openstax}.  The thread in thread-level parallelism refers to a thread of execution in which some part of a program runs its code. Threads are different from processes in that threads share the same memory space and are all added to the same existing process. These attributes give threads a distinct advantage over processes when one is working with multiple processors, as an arbitrary number of threads can work on the same shared data structure, either through synchronization or through splitting the structure up into discrete parts \cite{hpc_openstax}. 
+There are two main modes of parallelism in parallel computing: instruction-level parallelism and thread-level parallelism. 
+
+Instruction-level parallelism refers to design techniques at the processor/compiler level that speed the execution of sequential programs by allowing individual machine instructions, e.g. additions, floating point multiplications, memory stores/loads, to execute in parallel \cite{ilp_history}. This is typically done using different components of a processor to perform different parts of a given instruction at the same time. Modern processors typically have, at the very least, several floating point units and several integer units, which can handle different parts of the same instruction. 
+
+The main distinction between instruction-level parallelism and thread-level parallelism is that instruction-level parallelism occurs at the processor level whereas thread-level parallelism exploits concurrency among multiple processors within the same computer \cite{hpc_openstax}.  The thread in thread-level parallelism refers to a thread of execution in which some part of a program runs its code. Threads are different from processes in that threads share the same memory space and are all added to the same existing process. These attributes give threads a distinct advantage over processes when one is working with multiple processors, as an arbitrary number of threads can work on the same shared data structure, either through synchronization or through splitting the structure up into discrete parts \cite{hpc_openstax}. 
 
 
 \paragraph{Distributed Computing}
 The distinction between parallel computing and distributed computing is much like the distinction between instruction-level parallelism and thread-level parallelism. Whereas instruction-level parallelism occurs within one processor while thread-level parallelism occurs in a system with multiple processors, parallel computing occurs within one computer while distributed computing occurs across multiple computers. Naturally, new and unique problems arise when a project migrates from a single system of computers to a cluster consisting of multiple computers that are just as challenging as the problems that arise when making sequential code parallel. Common problems include, but are not limited to heterogeneity in networks, hardware, programming languages, or implementation of standard constructs, openness of components within a distributed system, scalability, fault tolerance, concurrency of different resources across different machines, and unique quality of service (QoS) issues relating to availability, reliability, and performance that do not affect applications running on a single computer \cite{dist_systems_concepts}. Distributed computing can refer to anything from blockchain networks, which distribute verification of information and transactions across many different systems, to web services architectures, in which a web application is broken into modular, discrete components which then run on different computers and communicate across the network, to cloud computing, in which innumerable virtual private servers are spun off and destroyed in tandem across many machines in a massive data center. This project will mainly focus on HPC settings in which memory-intensive scientific applications are run, but hopefully the deliverable will be able to be extended to cloud computing environments, and perhaps even to desktop computer environments if the memory management methods are applicable at this smaller scale. For the purposes of this project, computers with a discrete GPU or other processing component will not be considered distributed computing since many of the aforementioned challenges are less relevant when communicating between components within the same machine - offloading operations to a GPU is analogous to offloading to another CPU core or offloading cache contents to RAM.  
 
-\section{First-Class Distributed Computing in C++}
+\section{First-Class Distributed Computing in C++} \label{first_class_dist_cpp}
 While the most powerful computers in research in industry continue to expand their processor and GPU counts,
 distributed computing is not yet included as a first class component of the C++ STL \cite{towards_dist_cpp}. This forces many developers of high-performance scientific applications to reinvent the wheel for each individual project.  Common parallel computing constructs, like threads, mutexes, and other locks, went through a similar process in C++. Exploring the history of other attempts to standardize distributed data structures, as well as analogous constructs, is essential to understand the full picture of distributed computing in C++. First, we will detail the existing constructs for parallel and distributed computing and the history of their rise from community-driven tools to first class members of the STL. Next, we will explore recent attempts to add distributed computing paradigms into the C++ STL. 
 \paragraph{Existing Constructs}
-Despite the lack of distributed constructs and C++, there are many objects used in heterogeneous/parallel computing that serve as important references for any distributed data structures/algorithms. Most important among the aforementioned constructs are std::async, std::future, std::mutex, std::unique\_lock, and std::thread, which are detailed in proposals N1682, N1815, N1875, N1883, N1907, N2043, N2090, N2094,  N2096, N2139, N2178, N2184, N2885, and N2889, among others  \cite{n1682} \cite{n1815} \cite{n1875} \cite{n1883} \cite{n1907} \cite{n2043} \cite{n2096} \cite{n2139} \cite{n2178} \cite{n2184} \cite{n2285} \cite{n2889}. A great summary and amalgam of all these proposals can be found in N2320 \cite{n2320}. To summarize these developments, before the ISO C++ STL had any capacity for threading or any concurrency at all, Boost, a popular library that extends the STL, had its own version of threads, locks, and other essentials for concurrency. After the entire Boost community and development team had troubleshooted, iterated, and improved these features in boost, they had an outstanding product with fairly widespread industry adoption. Since the C++ working groups (WGs) have less flexibility and agility in the implementation of a new feature, they did not get around to discussing threading in C++ until after Boost was a full-formed library. As a result, the multi-threading library in the STL is opaquely influenced by Boost. C++ threads, just like boost threads, can be waited on, cooperatively cancelled, quereied, joined with other threads, detached, and otherwise managed. std::mutex in C++ is the mechanism by which threads are locked and synchronized. This ISO adoption of Boost standards is encouraging for any developer who wants to spin up a useful open-source library for use in the community, as it demonstrates that libraries with enough widespread community support can eventually become first-class members of the C++ STL. The idea of a standardized object for resolving an asynchronous subroutine call arose as a result of the fact that though there were many different multi-threading APIs proposed for the C++ standard, each of these libraries made simply calling another subroutine in parallel a difficult task with high code complexity. The intended domain for std::async was extracted concurrency in existing programs. There existed, and still exist, a number of applications that are purely sequential, having been written before multi-threading was widely possible, and inserting a function call in a couple of places is usually a more realistic goal than rewriting entire applications with concurrency in mind. N2889 gives the example of quicksort: std::async would be appropriate for recursive calls to quicksort, but not to the iteration in a partition, as it was not intended to compete with existing loop-parallelism solutions. std::future is the type returned by a call to std::async, and was proposed for this purpose instead of std::unique\_future to avoid unnecessary overhead with the unique\_future type. future can be thought of as a more primitive thread, in that it doesn't not provide any method for synchronization. Threads are relevant for the purposes of this project since thread-level parallelism will be necessary to maintain any concurrent data structure at a node level. Additionally, passing, cancelling, or locking threads from node to node may be essential depending on the implementation of our concurrent data structures, which seems to indicate that either using some implementation of thread pools or creating our own may be necessary. std::future is relevant for work that does not require synchronization, and a distributed implementation of future could be interesting, as it could potentially offer easy speed improvements to poorly written HPC applications. 
+Despite the lack of distributed constructs and C++, there are many objects used in heterogeneous/parallel computing that serve as important references for any distributed data structures/algorithms. Most important among the aforementioned constructs are std::async, std::future, std::mutex, std::unique\_lock, and std::thread, which are detailed in proposals N1682, N1815, N1875, N1883, N1907, N2043, N2090, N2094,  N2096, N2139, N2178, N2184, N2885, and N2889, among others  \cite{n1682} \cite{n1815} \cite{n1875} \cite{n1883} \cite{n1907} \cite{n2043} \cite{n2096} \cite{n2139} \cite{n2178} \cite{n2184} \cite{n2285} \cite{n2889}. A great summary and amalgam of all these proposals can be found in N2320 \cite{n2320}. 
+
+To briefly summarize this history, before the ISO C++ STL had any capacity for threading or any concurrency at all, Boost, a popular library that extends the STL, had its own version of threads, locks, and other essentials for concurrency. After the entire Boost community and development team had troubleshooted, iterated, and improved these features in boost, they had an outstanding product with fairly widespread industry adoption. Since the C++ working groups (WGs) have less flexibility and agility in the implementation of a new feature, they did not get around to discussing threading in C++ until after Boost was a full-formed library. As a result, the multi-threading library in the STL is opaquely influenced by Boost. C++ threads, just like boost threads, can be waited on, cooperatively cancelled, quereied, joined with other threads, detached, and otherwise managed. std::mutex in C++ is the mechanism by which threads are locked and synchronized. This ISO adoption of Boost standards is encouraging for any developer who wants to spin up a useful open-source library for use in the community, as it demonstrates that libraries with enough widespread community support can eventually become first-class members of the C++ STL. 
+
+The idea of a standardized object for resolving an asynchronous subroutine call arose as a result of the fact that though there were many different multi-threading APIs proposed for the C++ standard, each of these libraries made simply calling another subroutine in parallel a difficult task with high code complexity. The intended domain for std::async was extracted concurrency in existing programs. There existed, and still exist, a number of applications that are purely sequential, having been written before multi-threading was widely possible, and inserting a function call in a couple of places is usually a more realistic goal than rewriting entire applications with concurrency in mind. N2889 gives the example of quicksort: std::async would be appropriate for recursive calls to quicksort, but not to the iteration in a partition, as it was not intended to compete with existing loop-parallelism solutions. std::future is the type returned by a call to std::async, and was proposed for this purpose instead of std::unique\_future to avoid unnecessary overhead with the unique\_future type. future can be thought of as a more primitive thread, in that it doesn't not provide any method for synchronization. 
+
+Threads are relevant for the purposes of this project since thread-level parallelism will be necessary to maintain any concurrent data structure at a node level. Additionally, passing, cancelling, or locking threads from node to node may be essential depending on the implementation of our concurrent data structures, which seems to indicate that either using some implementation of thread pools or creating our own may be necessary. std::future is relevant for work that does not require synchronization, and a distributed implementation of future could be interesting, as it could potentially offer easy speed improvements to poorly written HPC applications. 
+
 
 \paragraph{Recent attempts}
-Among the most compelling recent attempts to include distributed constructs in the STL is the proposal P0443 \cite{p0443}. Driven by the increasing diversity and heterogeneity of hardware within almost every system from the newest smart phone to HPC clusters, this proposal suggests the creation of a work execution interface, std::executor, and representations of work/the relationships between work, std::sender and std::receiver. The executor interface could be used to represent anything from a thread pool to SIMD units to GPU runtimes to the current thread. Programmers could author executors by defining their own execution functions for each of these very different environments, and the executor interface is likely robust enough to provide support for any other execution environments that might arise in the future. Senders and receivers can represent almost any relationships between work in a flow diagram, allowing for the development of more generic code that acts on an asynchronous dependency graph and can be moved seamlessly in-and-out of systems with significant hardware differences. An interesting addition to P0443 is the application of affinity to executors as described in \cite{towards_dist_cpp}. In this context, affinity refers to memory access performance between running code and the data accessed by said code. In this context, a resource has higher affinity with a section of memory if access of that section comes with lower latency and/or higher bandwith \cite{towards_dist_cpp}. The authors suggest tailoring the executors detailed in P0443 to allow for application developers to preemptively place data/threads in the right place according to affinity, making it so that applications do not have to rely on the operating system to allocate each particular part of memory to the highest affinity segment, perhaps speeding memory accecss and/or achieving more bandwith. While both of these ideas would likely mesh excellently with this project, unfortunately neither have made it into any recent C++ standards. The current C++ machine model is still strictly CPU focused \cite{towards_dist_cpp}, and thus does not account for GPUs or other heterogeneous components, much less other computers. However, the approach of allocating memory based on affinity within an application instead of relying on the operating system is incredibly relevant for this project, as we will likely have to design our solution to optimize affinity on both a node level and a cluster level, where affinity with each big memory node must be accounted for.  
+Among the most compelling recent attempts to include distributed constructs in the STL is the proposal P0443 \cite{p0443}. Driven by the increasing diversity and heterogeneity of hardware within almost every system from the newest smart phone to HPC clusters, this proposal suggests the creation of a work execution interface, std::executor, and representations of work/the relationships between work, std::sender and std::receiver. The executor interface could be used to represent anything from a thread pool to SIMD units to GPU runtimes to the current thread. Programmers could author executors by defining their own execution functions for each of these very different environments, and the executor interface is likely robust enough to provide support for any other execution environments that might arise in the future. Senders and receivers can represent almost any relationships between work in a flow diagram, allowing for the development of more generic code that acts on an asynchronous dependency graph and can be moved seamlessly in-and-out of systems with significant hardware differences. 
+
+An interesting addition to P0443 is the application of affinity to executors as described in \cite{towards_dist_cpp}. In this context, affinity refers to memory access performance between running code and the data accessed by said code. In this context, a resource has higher affinity with a section of memory if access of that section comes with lower latency and/or higher bandwith \cite{towards_dist_cpp}. The authors suggest tailoring the executors detailed in P0443 to allow for application developers to preemptively place data/threads in the right place according to affinity, making it so that applications do not have to rely on the operating system to allocate each particular part of memory to the highest affinity segment, perhaps speeding memory accecss and/or achieving more bandwith. 
+
+While both of these ideas would likely mesh excellently with this project, unfortunately neither have made it into any recent C++ standards. The current C++ machine model is still strictly CPU focused \cite{towards_dist_cpp}, and thus does not account for GPUs or other heterogeneous components, much less other computers. However, the approach of allocating memory based on affinity within an application instead of relying on the operating system is incredibly relevant for this project, as we will likely have to design our solution to optimize affinity on both a node level and a cluster level, where affinity with each big memory node must be accounted for.  
 
 \section{Memory in Distributed Applications}
 Since the beginning of the information era, there has been rapid development of better CPUs with increased cores and faster clock times in conjunction with an increase in demand of data accesses in many applications \cite{sharing_cpu_memory}. Since the affordability and speed of RAM has not followed that of CPUs, this means that the memory resources in a distributed system are now much more expensive relative to CPU cycles. As a result of this, any interventions that improve the efficiency of accessing and sharing memory, whether at an operating system level or user level, could greatly improve the profitability and efficiency of existing distributed applications. Literature presents several existing improvements to memory usage in distributed applications like \cite{virtual_memory_tlb} \cite{sharing_cpu_memory}, this solution is unique in that it attempts to resolve many of the common pitfalls in distributed memory management at a language level. 
@@ -41,7 +56,6 @@ Since the beginning of the information era, there has been rapid development of 
 \begin{tabular}{|l|l|l|l|l|l|l|l|}
 \hline
 Project   & Paradigm & Architecture & Nested & Adaptive & Data Dist. & Scheduling            & Continued development \\ \hline
-PC2L      & S/MPMD   & Shared/Dist  & Yes    & Yes      & Auto/User  & ?                     & Yes                   \\ \hline
 STAPL     & S/MPMD   & Shared/Dist  & Yes    & Yes      & Auto/User  & Customizable          & Yes                   \\ \hline
 PSTL      & SPMD     & Shared/Dist  & No     & No       & Auto       & Tulip RTS             & No                    \\ \hline
 Charm++   & MPMD     & Shared/Dist  & No     & No       & User       & prioritized execution & Yes                   \\ \hline
@@ -67,35 +81,175 @@ There exist a number of comparable libraries that have attempted to standardize 
 \label{fig:stapl_arch}
 \end{figure}
 \paragraph{Description} 
-The Standard Template Adaptive Parallel Library (STAPL) was developed by researchers at Texas A\&M University in the late 1990s, far before the C++11 standard provided a set of standardized tools for concurrency. The library was originally created as a super-set of C++'s STL, with the intent to possibly replace the STL on small to medium multiprocessing systems \cite{STAPL}. STAPL is capable of running both single program multiple data (SPMD) and multiple program multiple data applications, and its scheduling algorithm is customizable. STAPL, like the C++ STL, is a generic library, offering data structures and algorithms that can be exploited by a large number of heterogeneous applications. \cite{STAPL}. STAPL implements each distributed data structure as a thread-safe, concurrent object called a pContainer \cite{stapl_parallel_container}. STAPL pContainers consist of a finite collection of typed elements, storage space, and an interface of methods/procedures that can be applied to the pContainer. \cite{stapl_parallel_container} Each pContainer is globally addressable, meaning it provides shared memory address space, and can be composed with other containers to create new structures \cite{stapl_parallel_container}. Distributed data structures implemented by STAPL include an array, a vector, a list, a matrix, a graph, a map, and a set. The library also includes common algorithms for these data structures like those one would find in the C++ STL. STAPL facilitates communication between data structures and algorithms by having algorithms communicate with pViews in the same way that algorithms in the C++ STL communicate with iterators \cite{stapl_parallel_container}. This is done through a pRange object, which is a directed acyclic graph in which vertices represent tasks while edges represent dependencies between tasks.
-\textbf{TODO}:  Write some stuff about the runtime system
-\cite{stapl_rts}
+The Standard Template Adaptive Parallel Library (STAPL) was developed by researchers at Texas A\&M University in the late 1990s, far before the C++11 standard provided a set of standardized tools for concurrency. The library was originally created as a super-set of C++'s STL, with the intent to possibly replace the STL on small to medium multiprocessing systems \cite{STAPL}. STAPL is capable of running both single program multiple data (SPMD) and multiple program multiple data applications, and its scheduling algorithm is customizable. STAPL, like the C++ STL, is a generic library, offering data structures and algorithms that can be exploited by a large number of heterogeneous applications. \cite{STAPL}. STAPL implements each distributed data structure as a thread-safe, concurrent object called a pContainer \cite{stapl_parallel_container}. 
 
+STAPL pContainers consist of a finite collection of typed elements, storage space, and an interface of methods/procedures that can be applied to the pContainer. \cite{stapl_parallel_container} Each pContainer is globally addressable, meaning it provides shared memory address space, and can be composed with other containers to create new structures \cite{stapl_parallel_container}. Distributed data structures implemented by STAPL include an array, a vector, a list, a matrix, a graph, a map, and a set \cite{stapl_parray} \cite{stapl_graph}. The library also includes common algorithms for these data structures like those one would find in the C++ STL. 
 
+STAPL facilitates communication between data structures and algorithms by having algorithms communicate with pViews through pRanges in the same way that algorithms in the C++ STL communicate with iterators \cite{stapl_parallel_container}. STAPL represents most algorithms using compositions of algorithmic skeletons, which include many common interaction patterns in parallel programs; for example, map, reduce, zip, and gather \cite{stapl_skeleton_framework}. Providing standard, efficient implementations of these skeletons allows users of the framework to focus on the business logic of their program instead of generic patterns. The code sample below includes an example usage of a few of these algorithmic skeletons. 
+
+Like many of the other C++ libraries designed with distributed/parallel computing in mind, STAPL provides its own custom runtime system detailed in \cite{stapl_rts}. One of the main ideas in STAPL's runtime system is that of a paragraph, which is essentially a directed task graph in which each work items are represented by vertices and dependencies are represented by edges. The runtime system provides executors and schedulers for the tasks detailed in pRanges \cite{STAPL_2010}.
 \paragraph{Contributions} 
+\begin{itemize}
+	\item
+		\textbf{Adaptive Remote Method Invocation (ARMI)}. STAPL provides primitives for registering parallel objects and using Remote Method Invocation on them from any cluster machine. This allows for the asynchronous transfer of data and work throughout the distributed system.  ARMI utilizes the future and promise constructs detailed in \ref{first_class_dist_cpp}. 
+	\item
+		\textbf{Generic Distributed Containers (pContainers)}. The STAPL parallel container framework provides a good way of abstracting away the implementation details of a given container on a distributed system, giving users a generic interface that works with any parallel container regardless of the type of system or network on which it is exists. In addition to a good interface, STAPL provides its own implementations of containers thatstack up well against other industry-standard implementations in scalability and performance trials. \cite{stapl_parallel_container}.	
+	\item
+		\textbf{Shared Memory Abstraction}. For users who are not working on lower-level applications, STAPL provides an abstraction of the global memory. For more advanced users, STAPL exposes a partitioned global addres space (PGAS) architecture. 
 
-STAPL was designed with code translation in mind, so each parallel container within STAPL implements the same methods that would be implemented by its C++ STL counterpart \cite{stapl_parallel_container}. For example, STAPL's implementation of a vector, stapl::pVector, can be accessed, sorted, modified, and constructed using the exact same syntax as a std::vector. STAPL offers users the ability to modify the scheduling algorithm to better suit the needs of their own projects.
+		\textbf{Big Data Graphs}. This is a particularly interesting contribution for this project. STAPL's graph library \cite{stapl_graph} provides a novel approach to out-of-core processing for big data graphs in memory-constricted systems, allowing algorithms implemented in this library to efficiently process graphs that do not fit entirely in RAM. STAPL's parallel graphs use a novel approach that combines RAM and hard disks/SSDs, and works exceedingly well on large distributed memory networks. The approach is comparable to paging, loading subgraphs of a larger graph into available RAM until the whole graph is processed. 
+\end{itemize}
+
+\paragraph{Code sample}
+This code solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. The code was retrieved from the examples section of STAPL's Gitlab repository \cite{stapl_gitlab}.  
+\scriptsize
+\begin{lstlisting}[language=C++, caption=STAPL code sample for Project Euler number 1. Headers and doxygen comments removed for brevity, captionpos=b]
+
+typedef unsigned long long ulong_type;
+
+struct three_five_divisor
+{
+  template<typename T>
+  bool operator()(T i)
+  {
+    return !((i % 3) == 0 || (i % 5) == 0);
+  }
+};
 
 
-\paragraph{Optimizations for memory-bound programs} 
+stapl::exit_code stapl_main(int, char** argv)
+{
+  ulong_type num = boost::lexical_cast<ulong_type> (argv[1]);
 
+  // Creates array container of unsigned integers that will be used for storage.
+  stapl::array<ulong_type> b(num);
+
+  // Creates view over container.
+  stapl::array_view<stapl::array<ulong_type>> vw(b);
+
+  // Fills the container with values from 1 to n.
+  stapl::iota(vw, 1);
+
+  // For numbers in the container that return true to the three_five_divisor
+  //   functor, they are set to 0.
+  stapl::replace_if(vw, three_five_divisor(), 0);
+
+  // Adds the total of all elements in container.
+  ulong_type total = stapl::accumulate(vw, (ulong_type)0);
+
+  // Prints the total sum.
+  stapl::do_once ([&] {
+    std::cout << "The total is: " << total << std::endl;
+  });
+
+  return EXIT_SUCCESS;
+}
+\end{lstlisting}
+\normalsize
 \subsection{Charm++}
 \begin{figure}[h]
-    \caption{Charm++ Architecture}
-    \label{fig:charm_structure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/charm_arch.jpg}
+	\caption{Charm++ Architecture \cite{charm_tutorial}}
+	\label{fig:charm_arch}
 \end{figure}
-\paragraph{Description}
-Charm++ is a parallel programming framework designed to ease the development, execution, migration, and decomposition of parallel applications \cite{parallel_programming_w_charm}. Charm++, like STAPL, provides object-oriented abstractions to ease the development of distributed applications. Additionally, in contrast to STAPL, Charm++ provides its own interface for message passing that is inter-operable with MPI. 
-
+\paragraph{Description} \label{charm_desc}
+Charm++ is a parallel programming framework designed to ease the development, execution, migration, and decomposition of parallel applications \cite{parallel_programming_w_charm}. First developed in the early 1990s, Charm++ may have been one of the earliest frameworks to attempt to address distributed computing issues with object-oriented solutions. When Charm++ was first brainstormed, both object orientation and concurrency were still relatively novel. Charm++ was especially innovative among early object-oriented concurrent frameworks in that it allowed for abstractions of modes of information sharing and communication, provided support for load balancing and prioritization, and put forth a new "chare" object used for programming common data parallel applications \cite{charm_93}. A chare is essentially a parallel process which can spin up more chares and send messages to other chares. In this sense, the Charm++ framework is only a step above MPI in that it provides additional features on top of the bare-bones parallel process management system. Some of these features include data abstractions for information sharing, such as read-only data, accumulators, monotonic/atomic variables, and distributed tables \cite{charm_93}. Additionally, over a decade before the STL accepted future and async as members, Charm++ included its own implementation of future, which is basically follows the same idea as the STL implementation discussed in \ref{first_class_dist_cpp} in that the calling process blocks until the value in the future is computed. Unlike STAPL and some other framework's in this domain, Charm++'s runtime system is message driven, and every Charm program can broadly be defined, much like MPI, as an initialization and a message-driven loop \cite{charm_rts}. In the initialization, the user defines a main chare and branch chare, initializes a memory manager, crafts queue management devices, and deals with load balancing, among other things. In the mesage driven loop, termed a "pick and process loop", the runtime system essentially acts as a work pool manager, comparable to an executor in a thread pool except with messages instead of threads. Users choose how messages are picked, defining distinct message priorities as necessary for different applications.  
 \paragraph{Contributions}
+	\begin{itemize}
+		\item \textbf{Message driven runtime system}. Whereas many frameworks abstract away the concept of messaging such that the user does not have to deal with it, Charm++ is entirely based around laying messaging bare, and all objects are built around sending and processing messages. While this can induce a learning curve for Charm++, it also makes programs written in Charm++ more readable for advanced users.  
+		\item \textbf{Latency tolerance through futures}. As mentioned in \ref{charm_desc}, Charm utilizes largely the same future construct that is used in the C++ STL. This makes transitioning trivially data parallel applications to Charm much easier, as the futures can simply be swapped out.   
+		
+	\end{itemize}
+
+\paragraph{Code sample}
+This code prints hello world on a single processor using a single chare in Charm++. It is difficult to show any other simple programs, as Charm++ programs often exist across a header file, source file, interface file, and makefile, and involve a nontrivial degree of code complexity.
+\scriptsize
+\begin{minipage}{0.45\textwidth}
+\begin{lstlisting}[language=C, caption=Hello World in Charm++, retrieved from \cite{charm_tutorial}, frame=tlrb]
+// File: main.h
+#ifndef __MAIN_H__
+#define __MAIN_H__
+
+class Main : public CBase_Main { (1)
+
+ public:
+  Main(CkArgMsg* msg); (2)
+  Main(CkMigrateMessage* msg); (3)
+
+};
+
+#endif //__MAIN_H__
 
 
+// File: main.c
+
+#include "main.decl.h" (6)
+#include "main.h"
+
+// Entry point of Charm++ application
+Main::Main(CkArgMsg* msg) {
+
+  // Print a message for the user
+  CkPrintf("Hello World!\n"); (4)
+
+  // Exit the application (5)
+  CkExit();
+}
+
+// Constructor needed for chare object migration (ignore
+// for now) NOTE: This constructor does not need to
+// appear in the ".ci" file
+Main::Main(CkMigrateMessage* msg) { }
+
+#include "main.def.h" (6)
+	
+\end{lstlisting}
+\end{minipage}
+
+\begin{minipage}{0.45\textwidth}
+
+\begin{lstlisting}[language=C, caption=Hello World in Charm++, retrieved from \cite{charm_tutorial}, captionpos=b, frame=tlrb]
+// File: main.ci (interface)
+ mainmodule main { (7)
+
+  mainchare Main { (8)
+    entry Main(CkArgMsg* msg); (9)
+  };
+
+};
+
+// File: makefile
+CHARMDIR = [put Charm++ install directory here] (10)
+CHARMC = $(CHARMDIR)/bin/charmc $(OPTS) (11)
+
+default: all
+all: hello
+
+hello : main.o
+   $(CHARMC) -language charm++ -o hello main.o (12)
+
+main.o : main.C main.h main.decl.h main.def.h
+   $(CHARMC) -o main.o main.C (13)
+
+main.decl.h main.def.h : main.ci
+   $(CHARMC) main.ci (14)
+
+clean:
+   rm -f main.decl.h main.def.h main.o hello charmrun
+\end{lstlisting}
+\end{minipage}
+\normalsize
 
 \subsection{X10}
     \begin{figure}[h]
+		\centering
+		\includegraphics[width=0.50\textwidth]{Figures/x10_arch.png}
         \caption{X10 Architecture}
         \label{fig:x10_arch}
     \end{figure}
+
+\paragraph{contributions}
 
 \subsection{Chapel}
     \begin{figure}[h]
@@ -103,8 +257,3 @@ Charm++ is a parallel programming framework designed to ease the development, ex
         \label{fig:chapel_arch}
     \end{figure}
 
-\subsection{Intel Thread Building Blocks (TBB)} 
-    \begin{figure}[h]
-        \caption{TBB Architecture}
-        \label{fig:tbb_arch}
-    \end{figure}

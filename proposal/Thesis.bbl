@@ -7,6 +7,10 @@ Gabriel Tanase, Antal Buss, Adam Fidel, Harshvardhan, Ioannis Papadopoulos,
 \newblock The stapl parallel container framework.
 \newblock {\em SIGPLAN Not.}, 46(8):235–246, February 2011.
 
+\bibitem{charm_tutorial}
+Charm++: Tutorial.
+\newblock \url{charmplusplus.org/CharmConcepts.html}.
+
 \bibitem{IDS}
 David Reinsel, John Gantz, and John Rydning.
 \newblock The digitization of the world: From edge to core.
@@ -196,6 +200,29 @@ et.~al. Hoberock.
 \newblock In {\em Proceedings 20th IEEE International Conference on Distributed
   Computing Systems}, pages 233--241, 2000.
 
+\bibitem{stapl_parray}
+Gabriel Tanase, Mauro Bianco, Nancy~M. Amato, and Lawrence Rauchwerger.
+\newblock The stapl parray.
+\newblock In {\em Proceedings of the 2007 Workshop on MEmory Performance:
+  DEaling with Applications, Systems and Architecture}, MEDEA '07, page
+  73–80, New York, NY, USA, 2007. Association for Computing Machinery.
+
+\bibitem{stapl_graph}
+Harshvardhan, Nancy~M. Amato, and Lawrence Rauchweger.
+\newblock Processing big data graphs on memory-restricted systems.
+\newblock In {\em Proceedings of the 23rd International Conference on Parallel
+  Architectures and Compilation}, PACT '14, page 517–518, New York, NY, USA,
+  2014. Association for Computing Machinery.
+
+\bibitem{stapl_skeleton_framework}
+Mani Zandifar, Mustafa Abdul~Jabbar, Alireza Majidi, David Keyes, Nancy~M.
+  Amato, and Lawrence Rauchwerger.
+\newblock Composing algorithmic skeletons to express high-performance
+  scientific applications.
+\newblock In {\em Proceedings of the 29th ACM on International Conference on
+  Supercomputing}, ICS '15, page 415–424, New York, NY, USA, 2015.
+  Association for Computing Machinery.
+
 \bibitem{stapl_rts}
 Ioannis Papadopoulos, Nathan Thomas, Adam Fidel, Nancy~M. Amato, and Lawrence
   Rauchwerger.
@@ -203,5 +230,33 @@ Ioannis Papadopoulos, Nathan Thomas, Adam Fidel, Nancy~M. Amato, and Lawrence
 \newblock In {\em Proceedings of the 29th ACM on International Conference on
   Supercomputing}, ICS '15, page 425–434, New York, NY, USA, 2015.
   Association for Computing Machinery.
+
+\bibitem{STAPL_2010}
+Antal Buss, Harshvardhan, Ioannis Papadopoulos, Olga Pearce, Timmie Smith,
+  Gabriel Tanase, Nathan Thomas, Xiabing Xu, Mauro Bianco, Nancy~M. Amato, and
+  Lawrence Rauchwerger.
+\newblock Stapl: Standard template adaptive parallel library.
+\newblock In {\em Proceedings of the 3rd Annual Haifa Experimental Systems
+  Conference}, SYSTOR '10, New York, NY, USA, 2010. Association for Computing
+  Machinery.
+
+\bibitem{euler_1}
+Project euler: Problem 1.
+\newblock \url{projecteuler.net/problem=1}.
+
+\bibitem{stapl_gitlab}
+Gitlab.com: Standard adaptive parallel templating library.
+\newblock \url{gitlab.com/parasol-lab/stapl}.
+
+\bibitem{charm_93}
+Laxmikant~V. Kale and Sanjeev Krishnan.
+\newblock Charm++: A portable concurrent object oriented system based on c++.
+\newblock {\em SIGPLAN Not.}, 28(10):91–108, October 1993.
+
+\bibitem{charm_rts}
+L.~V. Kal{\'e}, B.~Ramkumar, A.~B. Sinha, and V.~A. Saletore.
+\newblock {The CHARM Parallel Programming Language and System: Part II -- The
+  Runtime system}.
+\newblock {\em Parallel Programming Laboratory Technical Report \#95-03}, 1994.
 
 \end{thebibliography}
