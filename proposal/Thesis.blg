@@ -3,50 +3,52 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Thesis.aux
 A level-1 auxiliary file: Chapters/Chapter1_Introduction.aux
 A level-1 auxiliary file: Chapters/Chapter2_Background.aux
+A level-1 auxiliary file: Chapters/Chapter3_Conclusion.aux
 The style file: unsrt.bst
 Database file #1: Thesis.bib
+Warning--I didn't find a database entry for "chapel_github"
 Warning--empty booktitle in practical_dist_c
 Warning--empty chapter and pages in hpc_openstax
 Warning--empty chapter and pages in dist_systems_concepts
-You've used 44 entries,
+You've used 55 entries,
             1791 wiz_defined-function locations,
-            677 strings with 10964 characters,
-and the built_in function-call counts, 10314 in all, are:
-= -- 891
-> -- 502
-< -- 12
-+ -- 188
-- -- 144
-* -- 518
-:= -- 1504
-add.period$ -- 138
-call.type$ -- 44
-change.case$ -- 41
+            727 strings with 12354 characters,
+and the built_in function-call counts, 12326 in all, are:
+= -- 1057
+> -- 582
+< -- 14
++ -- 220
+- -- 165
+* -- 596
+:= -- 1790
+add.period$ -- 170
+call.type$ -- 55
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 47
-duplicate$ -- 538
-empty$ -- 1020
-format.name$ -- 144
-if$ -- 2471
+cite$ -- 58
+duplicate$ -- 638
+empty$ -- 1267
+format.name$ -- 165
+if$ -- 2963
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 29
-newline$ -- 219
-num.names$ -- 41
-pop$ -- 190
+int.to.str$ -- 55
+missing$ -- 35
+newline$ -- 271
+num.names$ -- 51
+pop$ -- 249
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 411
+skip$ -- 478
 stack$ -- 0
-substring$ -- 369
-swap$ -- 221
-text.length$ -- 12
+substring$ -- 430
+swap$ -- 248
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 62
-width$ -- 46
-write$ -- 464
-(There were 3 warnings)
+while$ -- 76
+width$ -- 57
+write$ -- 567
+(There were 4 warnings)

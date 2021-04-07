@@ -1,7 +1,13 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Global Data Growth through 2024. Source: International Data Corporation\relax }}{1}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Global Data Growth through 2024. Source: International Data Corporation\relax }}{2}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces STAPL Architecture \cite {stapl_parallel_container}\relax }}{8}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Charm++ Architecture \cite {charm_tutorial}\relax }}{10}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces X10 Architecture\relax }}{13}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Chapel Architecture\relax }}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Visualization of the difference from \cite {dist_java}\relax }}{3}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Relationships between existing and proposed C++ constructs\relax }}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Distributed Shared Memory \cite {vt_cs}\relax }}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Hardware/Software diagram of a typical system. ABI is in blue. \cite {virtualization}\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces STAPL Architecture \cite {stapl_parallel_container}\relax }}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Charm++ Architecture \cite {charm_tutorial}\relax }}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces X10 Architecture \cite {X10_2005}\relax }}{15}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Chapel Compilation and Runtime Architecture from \cite {chapel_rts_ppt}\relax }}{17}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Memcached Architecture from \cite {memcached_linux}\relax }}{19}{figure.caption.30}%
+\addvspace {10\p@ }

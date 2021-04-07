@@ -1,5 +1,31 @@
 \begin{thebibliography}{10}
 
+\bibitem{STAPL_2010}
+Antal Buss, Harshvardhan, Ioannis Papadopoulos, Olga Pearce, Timmie Smith,
+  Gabriel Tanase, Nathan Thomas, Xiabing Xu, Mauro Bianco, Nancy~M. Amato, and
+  Lawrence Rauchwerger.
+\newblock Stapl: Standard template adaptive parallel library.
+\newblock In {\em Proceedings of the 3rd Annual Haifa Experimental Systems
+  Conference}, SYSTOR '10, New York, NY, USA, 2010. Association for Computing
+  Machinery.
+
+\bibitem{dist_java}
+Pattamsetti Raja~Malleswara Rao.
+\newblock {\em Distributed computing in Java 9: make the best of Java for
+  distributing applications}.
+\newblock Packt, 2017.
+
+\bibitem{vt_cs}
+Distributed shared memory.
+\newblock
+  \url{courses.cs.vt.edu/~cs5204/fall99/distributedSys/amento/dsm.html}.
+
+\bibitem{virtualization}
+Dijiang Huang and Huijun Wu.
+\newblock Chapter 2 - virtualization.
+\newblock In Dijiang Huang and Huijun Wu, editors, {\em Mobile Cloud
+  Computing}, pages 31--64. Morgan Kaufmann, 2018.
+
 \bibitem{stapl_parallel_container}
 Gabriel Tanase, Antal Buss, Adam Fidel, Harshvardhan, Ioannis Papadopoulos,
   Olga Pearce, Timmie Smith, Nathan Thomas, Xiabing Xu, Nedal Mourad, Jeremy
@@ -10,6 +36,24 @@ Gabriel Tanase, Antal Buss, Adam Fidel, Harshvardhan, Ioannis Papadopoulos,
 \bibitem{charm_tutorial}
 Charm++: Tutorial.
 \newblock \url{charmplusplus.org/CharmConcepts.html}.
+
+\bibitem{X10_2005}
+Philippe Charles, Christian Grothoff, Vijay Saraswat, Christopher Donawa, Allan
+  Kielstra, Kemal Ebcioglu, Christoph von Praun, and Vivek Sarkar.
+\newblock X10.
+\newblock In {\em Proceedings of the 20th annual ACM SIGPLAN conference on
+  Object oriented programming systems languages and applications - OOPSLA
+  ’05}. ACM Press, 2005.
+
+\bibitem{chapel_rts_ppt}
+Greg Titus.
+\newblock The chapel runtime.
+\newblock \url{chapel-lang.org/presentations/Chapel-Runtime-Charm++13.pdf}.
+
+\bibitem{memcached_linux}
+Brad Fitzpatrick.
+\newblock Distributed caching with memcached.
+\newblock \url{linuxjournal.com/article/7451}.
 
 \bibitem{IDS}
 David Reinsel, John Gantz, and John Rydning.
@@ -200,6 +244,17 @@ et.~al. Hoberock.
 \newblock In {\em Proceedings 20th IEEE International Conference on Distributed
   Computing Systems}, pages 233--241, 2000.
 
+\bibitem{challenge_dist_mem}
+{Nian-Feng Tzeng} and S.~J. {Wallach}.
+\newblock Issues on the architecture and the design of distributed shared
+  memory systems.
+\newblock In {\em Proceedings International Conference on Computer Design. VLSI
+  in Computers and Processors}, pages 60--61, 1996.
+
+\bibitem{amd_x86_64}
+System v application binary interface.
+\newblock \url{uclibc.org/docs/psABI-x86_64.pdf}.
+
 \bibitem{stapl_parray}
 Gabriel Tanase, Mauro Bianco, Nancy~M. Amato, and Lawrence Rauchwerger.
 \newblock The stapl parray.
@@ -231,15 +286,6 @@ Ioannis Papadopoulos, Nathan Thomas, Adam Fidel, Nancy~M. Amato, and Lawrence
   Supercomputing}, ICS '15, page 425–434, New York, NY, USA, 2015.
   Association for Computing Machinery.
 
-\bibitem{STAPL_2010}
-Antal Buss, Harshvardhan, Ioannis Papadopoulos, Olga Pearce, Timmie Smith,
-  Gabriel Tanase, Nathan Thomas, Xiabing Xu, Mauro Bianco, Nancy~M. Amato, and
-  Lawrence Rauchwerger.
-\newblock Stapl: Standard template adaptive parallel library.
-\newblock In {\em Proceedings of the 3rd Annual Haifa Experimental Systems
-  Conference}, SYSTOR '10, New York, NY, USA, 2010. Association for Computing
-  Machinery.
-
 \bibitem{euler_1}
 Project euler: Problem 1.
 \newblock \url{projecteuler.net/problem=1}.
@@ -258,5 +304,20 @@ L.~V. Kal{\'e}, B.~Ramkumar, A.~B. Sinha, and V.~A. Saletore.
 \newblock {The CHARM Parallel Programming Language and System: Part II -- The
   Runtime system}.
 \newblock {\em Parallel Programming Laboratory Technical Report \#95-03}, 1994.
+
+\bibitem{X10_site}
+The x10 programming language.
+\newblock \url{x10-lang.org}.
+
+\bibitem{chapel_2007}
+B.L. Chamberlain, D.~Callahan, and H.P. Zima.
+\newblock Parallel programmability and the chapel language.
+\newblock {\em The International Journal of High Performance Computing
+  Applications}, 21(3):291--312, 2007.
+
+\bibitem{lj_dev}
+Brad Fitzpatrick.
+\newblock memcached: lj\_dev - livejournal.
+\newblock \url{lj-dev.livejournal.com/539656.html}.
 
 \end{thebibliography}

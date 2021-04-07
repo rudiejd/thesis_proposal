@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.16)  4 APR 2021 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.16)  6 APR 2021 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -333,23 +333,33 @@ Package hyperref Info: Option `linktocpage' set `true' on input line 6.
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count295
 \l__pdf_internal_box=\box53
-) (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+) (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux
+
+LaTeX Warning: Label `fig:chapel_arch' multiply defined.
+
+
+LaTeX Warning: Label `fig:chapel_arch' multiply defined.
+
+
+LaTeX Warning: Label `fig:chapel_arch' multiply defined.
+
+) (./Chapters/Chapter3_Conclusion.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count296
@@ -364,7 +374,7 @@ LaTeX Font Info:    ... okay on input line 10.
 \makeMPintoPDFobject=\count301
 \everyMPtoPDFconversion=\toks34
 )
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 19.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -374,9 +384,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count302
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
  (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write3
 Package caption Info: Begin \AtBeginDocument code.
@@ -390,11 +400,11 @@ Package caption Info: End \AtBeginDocument code.
 
 
 ] (./Thesis.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
@@ -413,184 +423,156 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] (./Chapters/Chapter1_Introduction.tex
 Chapter 1.
+<Figures/global_data_growth.jpg, id=152, 1003.5894pt x 745.8264pt>
+File: Figures/global_data_growth.jpg Graphic file (type jpg)
+<use Figures/global_data_growth.jpg>
+Package pdftex.def Info: Figures/global_data_growth.jpg  used on input line 6.
+(pdftex.def)             Requested size: 234.8775pt x 174.55226pt.
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.92 \include{Chapters/Chapter1_Introduction}
+l.95 \include{Chapters/Chapter1_Introduction}
                                               [1
 
 
 
-] (./Chapters/Chapter2_Background.tex
+ <./Figures/global_data_growth.jpg>] [2] (./Chapters/Chapter2_Background.tex
 Chapter 2.
-<Figures/global_data_growth.jpg, id=123, 1003.5894pt x 745.8264pt>
-File: Figures/global_data_growth.jpg Graphic file (type jpg)
-<use Figures/global_data_growth.jpg>
-Package pdftex.def Info: Figures/global_data_growth.jpg  used on input line 7.
-(pdftex.def)             Requested size: 234.8775pt x 174.55226pt.
-[2
+<Figures/parallel_vs_distributed.png, id=191, 447.17062pt x 194.97844pt>
+File: Figures/parallel_vs_distributed.png Graphic file (type png)
+<use Figures/parallel_vs_distributed.png>
+Package pdftex.def Info: Figures/parallel_vs_distributed.png  used on input line 8.
+(pdftex.def)             Requested size: 305.33789pt x 133.13695pt.
+[3
 
 
 
 
- <./Figures/global_data_growth.jpg>] [3] [4] [5] [6]
+ <./Figures/parallel_vs_distributed.png>] [4] [5]
+<Figures/cpp_firstclass.jpg, id=244, 563.10374pt x 438.63875pt>
+File: Figures/cpp_firstclass.jpg Graphic file (type jpg)
+<use Figures/cpp_firstclass.jpg>
+Package pdftex.def Info: Figures/cpp_firstclass.jpg  used on input line 41.
+(pdftex.def)             Requested size: 305.33789pt x 237.84528pt.
+ [6 <./Figures/cpp_firstclass.jpg>]
+<Figures/dsm.jpg, id=258, 478.78876pt x 379.4175pt>
+File: Figures/dsm.jpg Graphic file (type jpg)
+<use Figures/dsm.jpg>
+Package pdftex.def Info: Figures/dsm.jpg  used on input line 58.
+(pdftex.def)             Requested size: 305.33789pt x 241.96373pt.
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 53.
-
-<Figures/stapl_overview.png, id=222, 344.03531pt x 198.7425pt>
-File: Figures/stapl_overview.png Graphic file (type png)
-<use Figures/stapl_overview.png>
-Package pdftex.def Info: Figures/stapl_overview.png  used on input line 79.
-(pdftex.def)             Requested size: 234.8775pt x 135.68289pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7] [8 <./Figures/stapl_overview.png (PNG copy)>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+[7]
+<Figures/abi.jpg, id=268, 409.95638pt x 188.66946pt>
+File: Figures/abi.jpg Graphic file (type jpg)
+<use Figures/abi.jpg>
+Package pdftex.def Info: Figures/abi.jpg  used on input line 69.
+(pdftex.def)             Requested size: 234.8775pt x 108.09544pt.
+ [8 <./Figures/dsm.jpg> <./Figures/abi.jpg>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 82.
+
+[9]
+<Figures/stapl_overview.png, id=284, 344.03531pt x 198.7425pt>
+File: Figures/stapl_overview.png Graphic file (type png)
+<use Figures/stapl_overview.png>
+Package pdftex.def Info: Figures/stapl_overview.png  used on input line 110.
+(pdftex.def)             Requested size: 234.8775pt x 135.68289pt.
+ [10 <./Figures/stapl_overview.png (PNG copy)>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 106.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 111.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 112.
- (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 112.
- [9]
-<Figures/charm_arch.jpg, id=305, 480.79625pt x 214.8025pt>
+) [11]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 137.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 139.
+<Figures/charm_arch.jpg, id=318, 480.79625pt x 214.8025pt>
 File: Figures/charm_arch.jpg Graphic file (type jpg)
 <use Figures/charm_arch.jpg>
-Package pdftex.def Info: Figures/charm_arch.jpg  used on input line 152.
+Package pdftex.def Info: Figures/charm_arch.jpg  used on input line 182.
 (pdftex.def)             Requested size: 234.8775pt x 104.9362pt.
- [10 <./Figures/charm_arch.jpg>]
-./Chapters/Chapter2_Background.tex:169: Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-l.169 ...d from \cite{charm_tutorial}, frame=tlrb]
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-./Chapters/Chapter2_Background.tex:169: Extra \endcsname.
-\KV@split ...csname \KV@prefix \@tempa \endcsname 
-                                                  \ifx \@tempc \relax \KV@er...
-l.169 ...d from \cite{charm_tutorial}, frame=tlrb]
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
 
 
-./Chapters/Chapter2_Background.tex:169: Package keyval Error: retrieved from \cite {charm_tutorial} undefined.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.169 ...d from \cite{charm_tutorial}, frame=tlrb]
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (74.218pt too wide) in paragraph at lines 200--201
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (48.71744pt too wide) in paragraph at lines 201--202
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[11]
-./Chapters/Chapter2_Background.tex:212: Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-l.212 ...harm_tutorial}, captionpos=b, frame=tlrb]
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-./Chapters/Chapter2_Background.tex:212: Extra \endcsname.
-\KV@split ...csname \KV@prefix \@tempa \endcsname 
-                                                  \ifx \@tempc \relax \KV@er...
-l.212 ...harm_tutorial}, captionpos=b, frame=tlrb]
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-
-./Chapters/Chapter2_Background.tex:212: Package keyval Error: retrieved from \cite {charm_tutorial} undefined.
-
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.212 ...harm_tutorial}, captionpos=b, frame=tlrb]
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (53.81755pt too wide) in paragraph at lines 223--224
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (13.01665pt too wide) in paragraph at lines 224--226
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (48.71744pt too wide) in paragraph at lines 230--232
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (18.11676pt too wide) in paragraph at lines 232--233
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (58.91766pt too wide) in paragraph at lines 239--240
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[12]
-<Figures/x10_arch.png, id=379, 619.56468pt x 247.67531pt>
+[12] [13 <./Figures/charm_arch.jpg>]
+<Figures/x10_arch.png, id=388, 560.0925pt x 345.29pt>
 File: Figures/x10_arch.png Graphic file (type png)
 <use Figures/x10_arch.png>
-Package pdftex.def Info: Figures/x10_arch.png  used on input line 247.
-(pdftex.def)             Requested size: 234.8775pt x 93.89084pt.
-) [13 <./Figures/x10_arch.png (PNG copy)>] (./Thesis.bbl [14
+Package pdftex.def Info: Figures/x10_arch.png  used on input line 258.
+(pdftex.def)             Requested size: 234.8775pt x 144.79951pt.
+ [14] [15 <./Figures/x10_arch.png>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 280.
+<Figures/chapel_arch.png, id=457, 576.65437pt x 364.36125pt>
+File: Figures/chapel_arch.png Graphic file (type png)
+<use Figures/chapel_arch.png>
+Package pdftex.def Info: Figures/chapel_arch.png  used on input line 293.
+(pdftex.def)             Requested size: 305.33789pt x 192.93819pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <./Figures/chapel_arch.png (PNG copy)>]
+
+LaTeX Warning: Citation `chapel_github' on page 18 undefined on input line 315.
+
+<Figures/memcached_arch.jpg, id=490, 481.8pt x 343.2825pt>
+File: Figures/memcached_arch.jpg Graphic file (type jpg)
+<use Figures/memcached_arch.jpg>
+Package pdftex.def Info: Figures/memcached_arch.jpg  used on input line 349.
+(pdftex.def)             Requested size: 305.33789pt x 217.55766pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18] [19 <./Figures/memcached_arch.jpg>]) [20] (./Chapters/Chapter3_Conclusion.tex
+Chapter 3.
+) [21
 
 
 
 
-] [15] [16]) [17] (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux))
+] (./Thesis.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+[]\OT1/cmr/m/n/12 Greg Ti-tus.  The chapel run-time.  [][]$\OT1/cmtt/m/n/12 chapel-[]lang . org / presentations /
+ []
+
+[22
+
+
+
+
+] [23] [24] [25]) [26] (./Thesis.aux (./Chapters/Chapter1_Introduction.aux) (./Chapters/Chapter2_Background.aux) (./Chapters/Chapter3_Conclusion.aux))
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D729A05EB41FDC19B6FA11596C79509D;922.
+(rerunfilecheck)             Checksum: 0EBA9C6CAFC8A92EDD2A00A5CC627B0B;984.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 10313 strings out of 479383
- 153910 string characters out of 5875830
- 689791 words of memory out of 5000000
- 27007 multiletter control sequences out of 15000+600000
- 413002 words of font info for 62 fonts, out of 8000000 for 9000
+ 10419 strings out of 479383
+ 155931 string characters out of 5875830
+ 851321 words of memory out of 5000000
+ 27057 multiletter control sequences out of 15000+600000
+ 411695 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,9n,76p,2403b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (22 pages, 614295 bytes).
+ 66i,9n,76p,2403b,1277s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Thesis.pdf (31 pages, 810156 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 205 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 686 PDF objects out of 1000 (max. 8388607)
+ 616 compressed objects within 7 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 

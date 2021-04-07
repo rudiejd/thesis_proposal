@@ -1,26 +1,35 @@
 \contentsline {chapter}{List of Tables}{iv}{chapter*.1}%
 \contentsline {chapter}{List of Figures}{v}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Contributions}{1}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Background \& Related Work}{2}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Background \& Related Work}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Parallel vs. Distributed Computing}{3}{section.2.1}%
-\contentsline {paragraph}{Parallel Computing}{3}{section*.5}%
-\contentsline {paragraph}{Distributed Computing}{3}{section*.6}%
-\contentsline {section}{\numberline {2.2}First-Class Distributed Computing in C++}{4}{section.2.2}%
-\contentsline {paragraph}{Existing Constructs}{4}{section*.7}%
-\contentsline {paragraph}{Recent attempts}{6}{section*.8}%
-\contentsline {section}{\numberline {2.3}Memory in Distributed Applications}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Related Work}{7}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}STAPL}{7}{subsection.2.4.1}%
-\contentsline {paragraph}{Description}{7}{section*.11}%
-\contentsline {paragraph}{Contributions}{8}{section*.12}%
-\contentsline {paragraph}{Code sample}{9}{section*.13}%
-\contentsline {subsection}{\numberline {2.4.2}Charm++}{10}{subsection.2.4.2}%
+\contentsline {paragraph}{Parallel Computing}{3}{section*.6}%
+\contentsline {paragraph}{Distributed Computing}{4}{section*.7}%
+\contentsline {section}{\numberline {2.2}First-Class Distributed Computing in C++}{5}{section.2.2}%
+\contentsline {paragraph}{Existing Constructs}{5}{section*.8}%
+\contentsline {paragraph}{Recent attempts}{6}{section*.10}%
+\contentsline {section}{\numberline {2.3}Memory in Distributed Applications}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Application Binary Interfaces}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Related Work}{9}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}STAPL}{10}{subsection.2.5.1}%
 \contentsline {paragraph}{Description}{10}{section*.15}%
 \contentsline {paragraph}{Contributions}{11}{section*.16}%
-\contentsline {paragraph}{Code sample}{11}{section*.17}%
-\contentsline {subsection}{\numberline {2.4.3}X10}{13}{subsection.2.4.3}%
-\contentsline {paragraph}{contributions}{13}{section*.19}%
-\contentsline {subsection}{\numberline {2.4.4}Chapel}{13}{subsection.2.4.4}%
-\contentsline {chapter}{References}{14}{figure.caption.20}%
+\contentsline {paragraph}{Code sample}{12}{section*.17}%
+\contentsline {subsection}{\numberline {2.5.2}Charm++}{12}{subsection.2.5.2}%
+\contentsline {paragraph}{Description}{12}{section*.19}%
+\contentsline {paragraph}{Contributions}{13}{section*.20}%
+\contentsline {paragraph}{Code sample}{14}{section*.21}%
+\contentsline {subsection}{\numberline {2.5.3}X10}{14}{subsection.2.5.3}%
+\contentsline {paragraph}{Description}{14}{section*.23}%
+\contentsline {paragraph}{Contributions}{15}{section*.24}%
+\contentsline {paragraph}{Code sample}{16}{section*.25}%
+\contentsline {subsection}{\numberline {2.5.4}Chapel}{16}{subsection.2.5.4}%
+\contentsline {paragraph}{Description}{16}{section*.27}%
+\contentsline {paragraph}{Contributions}{17}{section*.28}%
+\contentsline {paragraph}{Code sample}{18}{section*.29}%
+\contentsline {subsection}{\numberline {2.5.5}memcached}{19}{subsection.2.5.5}%
+\contentsline {paragraph}{Description}{19}{section*.31}%
+\contentsline {paragraph}{Contributions}{20}{section*.32}%
+\contentsline {chapter}{\numberline {3}Conclusion}{21}{chapter.3}%
+\contentsline {paragraph}{Future work}{21}{section*.33}%
+\contentsline {chapter}{References}{22}{section*.33}%
