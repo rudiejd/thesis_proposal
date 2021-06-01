@@ -1,6 +1,8 @@
-\contentsline {chapter}{List of Tables}{iv}{chapter*.1}%
-\contentsline {chapter}{List of Figures}{v}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{v}{chapter*.1}%
+\contentsline {chapter}{List of Figures}{vi}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Contributions}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background \& Related Work}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Parallel vs. Distributed Computing}{3}{section.2.1}%
 \contentsline {paragraph}{Parallel Computing}{3}{section*.6}%
@@ -30,6 +32,25 @@
 \contentsline {subsection}{\numberline {2.5.5}memcached}{19}{subsection.2.5.5}%
 \contentsline {paragraph}{Description}{19}{section*.31}%
 \contentsline {paragraph}{Contributions}{20}{section*.32}%
-\contentsline {chapter}{\numberline {3}Conclusion}{21}{chapter.3}%
-\contentsline {paragraph}{Future work}{21}{section*.33}%
-\contentsline {chapter}{References}{22}{section*.33}%
+\contentsline {chapter}{\numberline {3}Overview and Terminology}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Message Passing}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Message Class}{22}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Workers}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}CacheWorker}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}CacheManager}{22}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Research Overview}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Proposed Methodology}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Vector}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Unordered Multi-Map}{25}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Graph/Tree}{25}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Associated Algorithms}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Distributed Memory Allocator}{26}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Dissemination of Results}{27}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Validation}{27}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Performance Comparison with Sequential Equivalents}{28}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Adaptivity Assessment}{28}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Scalability Measurement}{28}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Usability Measurement}{28}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Stopping Criteria}{29}{subsection.4.6.5}%
+\contentsline {chapter}{\numberline {5}Conclusion}{30}{chapter.5}%
+\contentsline {chapter}{References}{31}{chapter.5}%

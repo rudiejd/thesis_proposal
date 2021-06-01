@@ -56,7 +56,7 @@ Since the beginning of the information era, there has been rapid development of 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{Figures/dsm.jpg}
-	\label{fig:chapel_arch}
+	\label{fig:dsm}
 	\caption{Distributed Shared Memory \cite{vt_cs}}
 \end{figure}
 Some of the main challenges in architecture of a shared memory system include coherence enforcement, coherence protocol, processor system interfacing, and interconnection network utilization \cite{challenge_dist_mem}. In this context, coherence refers to determining which instance of a given piece of memory can be considered accurate. For example, a distributed system may cache 4 redundant copies of the same block of memory on 4 separate nodes to speed reading this block. When one node updates this block of data, all 4 must be notified, and the value must be changed in all of their local caches. Processor system interfacing refers to interactions a distributed application might have with distinct processors on distinct machines. For example, one processor may be little-endian whereas another is big endian. For the purposes of this project, this subtle, yet important, issue will initially be ignored in favor of shipping a viable product for Miami University's cluster, then addressed after a sufficiently featured prototype is working. Extra attention will be paid to using/implementing the most efficient coherence protocol while still achieving acceptable coherence enforcement.  
@@ -67,7 +67,7 @@ In light of all the potential pitfalls surrounding distributed memory and the ab
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Figures/abi.jpg}
-	\label{fig:chapel_arch}
+	\label{fig:abi}
 	\caption{ Hardware/Software diagram of a typical system. ABI is in blue. \cite{virtualization}}
 \end{figure}
 Since the scope of this project is fairly low level, some exploration of how the operating system handles the transfer of data from program to program is necessary, as similar methods will be used when transferring data from machine to machine. Just as an Application Programming Interface (API) defines how users of an application should use exposed methods in a human-readable format, the application Binary Interface defines how programs should use exposed machine methods. AMD's System V ABI for x86 and x64 systems \cite{amd_x86_64} is one example of how an ABI might look in the real world.
@@ -304,7 +304,7 @@ class HelloWholeWorld {
 	Chapel's runtime system has a communication layer that supports inter-locale communicate, PUT/GET operations that work similarly to their HTTP equivalents, and remote fork operations which can be described as the distributed equivalent of the STL implementation of fork on a single system \cite{chapel_rts_ppt}. The runtime system's tasking layer is another abstraction of the concept of threads similarly to what exists in other libraries, offering synchronization and dependency support - the runtime system offers a distinct, "threading" layer to separate these tasks from the underlying thread programming.  The runtime system 
 	\paragraph{Contributions}
 	\begin{itemize}
-		\item \textbf{Lightweight processors}. In \ref{introduction} and \ref{memory_distrib}, the prevalence of workloads that are dependent more on memory than processor performance is thoroughly iscussed. The authors of Chapel noted this phenomenon as early as their first publication about the language in 2004, calling attention to the fact that large register sets/data caches are focused on a single thread, which can result in unncessarily large execution state and expensive context switching \cite{chapel}. In an attempt to remedy this, Cascade provides a distinct class of virtual processor, called a "lightweight" processor, that is optimized for programs which are either rich in short threads/synchronization or data intensive, and is implemented in the memory subsytem. While this project will likely never create a new virtual processor, this aspect of the Cascade architecture is intriguing, and using parts of this open implementation could be productive. 
+		\item \textbf{Lightweight processors}. In \ref{introduction} and \ref{memory_distrib}, the prevalence of workloads that are dependent more on memory than processor performance is thoroughly discussed. The authors of Chapel noted this phenomenon as early as their first publication about the language in 2004, calling attention to the fact that large register sets/data caches are focused on a single thread, which can result in unncessarily large execution state and expensive context switching \cite{chapel}. In an attempt to remedy this, Cascade provides a distinct class of virtual processor, called a "lightweight" processor, that is optimized for programs which are either rich in short threads/synchronization or data intensive, and is implemented in the memory subsytem. While this project will likely never create a new virtual processor, this aspect of the Cascade architecture is intriguing, and using parts of this open implementation could be productive. 
 
 
 		\item \textbf{Domain.} Chapel's concept of a domain, while implemented at the language level in their work, could be interesting as a generalization of an array within the context of a distributed C++ framework. Perhaps implementing an array with a more general indexing set as part of the library for this thesis project could lead to higher productivity and lower code reuse. 
@@ -347,7 +347,7 @@ coforall loc in Locales {
     \begin{figure}[h]
 		\centering
 		\includegraphics[width=0.65\textwidth]{Figures/memcached_arch.jpg}
-        \label{fig:chapel_arch}
+		\label{fig:memcached_arch}
 		\caption{Memcached Architecture from \cite{memcached_linux}}
     \end{figure}
 	\paragraph{Description}

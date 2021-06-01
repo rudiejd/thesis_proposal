@@ -1,16 +1,38 @@
 \BOOKMARK [0][-]{chapter*.1}{List of Tables}{}% 1
 \BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 2
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
-\BOOKMARK [0][-]{chapter.2}{Background \046 Related Work}{}% 4
-\BOOKMARK [1][-]{section.2.1}{Parallel vs. Distributed Computing}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.2}{First-Class Distributed Computing in C++}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.3}{Memory in Distributed Applications}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.4}{Application Binary Interfaces}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.5}{Related Work}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.5.1}{STAPL}{section.2.5}% 10
-\BOOKMARK [2][-]{subsection.2.5.2}{Charm++}{section.2.5}% 11
-\BOOKMARK [2][-]{subsection.2.5.3}{X10}{section.2.5}% 12
-\BOOKMARK [2][-]{subsection.2.5.4}{Chapel}{section.2.5}% 13
-\BOOKMARK [2][-]{subsection.2.5.5}{memcached}{section.2.5}% 14
-\BOOKMARK [0][-]{chapter.3}{Conclusion}{}% 15
-\BOOKMARK [0][-]{section*.33}{References}{}% 16
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Contributions}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Background \046 Related Work}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Parallel vs. Distributed Computing}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{First-Class Distributed Computing in C++}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Memory in Distributed Applications}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Application Binary Interfaces}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Related Work}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{STAPL}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Charm++}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.3}{X10}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.4}{Chapel}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.5}{memcached}{section.2.5}% 16
+\BOOKMARK [0][-]{chapter.3}{Overview and Terminology}{}% 17
+\BOOKMARK [1][-]{section.3.1}{Message Passing}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.1.1}{Message Class}{section.3.1}% 19
+\BOOKMARK [1][-]{section.3.2}{Workers}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{CacheWorker}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{CacheManager}{section.3.2}% 22
+\BOOKMARK [0][-]{chapter.4}{Research Overview}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Proposed Methodology}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{Vector}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Unordered Multi-Map}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.3.1}{Graph/Tree}{section.4.3}% 27
+\BOOKMARK [1][-]{section.4.4}{Associated Algorithms}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.1}{Distributed Memory Allocator}{section.4.4}% 29
+\BOOKMARK [1][-]{section.4.5}{Dissemination of Results}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.6}{Validation}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.6.1}{Performance Comparison with Sequential Equivalents}{section.4.6}% 32
+\BOOKMARK [2][-]{subsection.4.6.2}{Adaptivity Assessment}{section.4.6}% 33
+\BOOKMARK [2][-]{subsection.4.6.3}{Scalability Measurement}{section.4.6}% 34
+\BOOKMARK [2][-]{subsection.4.6.4}{Usability Measurement}{section.4.6}% 35
+\BOOKMARK [2][-]{subsection.4.6.5}{Stopping Criteria}{section.4.6}% 36
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 37
+\BOOKMARK [0][-]{chapter.5}{References}{}% 38

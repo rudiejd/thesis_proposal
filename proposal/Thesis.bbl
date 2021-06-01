@@ -34,7 +34,7 @@ Gabriel Tanase, Antal Buss, Adam Fidel, Harshvardhan, Ioannis Papadopoulos,
 \newblock {\em SIGPLAN Not.}, 46(8):235–246, February 2011.
 
 \bibitem{charm_tutorial}
-Charm++: Tutorial.
+Charm tutorial.
 \newblock \url{charmplusplus.org/CharmConcepts.html}.
 
 \bibitem{X10_2005}
@@ -315,9 +315,52 @@ B.L. Chamberlain, D.~Callahan, and H.P. Zima.
 \newblock {\em The International Journal of High Performance Computing
   Applications}, 21(3):291--312, 2007.
 
+\bibitem{chapel_github}
+Github: Chapel language.
+\newblock \url{https://github.com/chapel-lang/chapel}.
+
 \bibitem{lj_dev}
 Brad Fitzpatrick.
 \newblock memcached: lj\_dev - livejournal.
 \newblock \url{lj-dev.livejournal.com/539656.html}.
+
+\bibitem{mpi}
+Mpi: A message passing interface.
+\newblock In {\em Supercomputing '93:Proceedings of the 1993 ACM/IEEE
+  Conference on Supercomputing}, pages 878--883, 1993.
+
+\bibitem{ARMCI}
+Jarek Nieplocha and Bryan Carpenter.
+\newblock Armci: A portable remote memory copy library for distributed array
+  libraries and compiler run-time systems.
+\newblock In Jos{\'e} Rolim, Frank Mueller, Albert~Y. Zomaya, Fikret Ercal,
+  Stephan Olariu, Binoy Ravindran, Jan Gustafsson, Hiroaki Takada, Ron Olsson,
+  Laxmikant~V. Kale, Pete Beckman, Matthew Haines, Hossam ElGindy, Denis
+  Caromel, Serge Chaumette, Geoffrey Fox, Yi~Pan, Keqin Li, Tao Yang,
+  G.~Chiola, G.~Conte, L.~V. Mancini, Domenique M{\'e}ry, Beverly Sanders,
+  Devesh Bhatt, and Viktor Prasanna, editors, {\em Parallel and Distributed
+  Processing}, pages 533--546, Berlin, Heidelberg, 1999. Springer Berlin
+  Heidelberg.
+
+\bibitem{metagenomics}
+José~M. Abuín, Nuno Lopes, Luís Ferreira, Tomás~F. Pena, and Bertil
+  Schmidt.
+\newblock Big data in metagenomics: Apache spark vs mpi.
+\newblock {\em PLOS ONE}, 15(10):1--20, 10 2020.
+
+\bibitem{stl_guide}
+David~R. Musser, Gillmer~J. Derge, and Atul Saini.
+\newblock {\em STL tutorial and reference guide: C++ programming with the
+  standard template library}.
+\newblock Addison-Wesley, 2005.
+
+\bibitem{cpp_ref_vector}
+cppreference.com - vector.
+\newblock \url{https://en.cppreference.com/w/cpp/container/vector}.
+
+\bibitem{use}
+Ahmed Seffah, Mohammad Donyaee, Rex Kline, and Harkirat Padda.
+\newblock Usability measurement and metrics: A consolidated model.
+\newblock {\em Software Quality Journal}, 14:159--178, 06 2006.
 
 \end{thebibliography}
