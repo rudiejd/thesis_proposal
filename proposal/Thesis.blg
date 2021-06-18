@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2020/Arch Linux)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2021/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Thesis.aux
 A level-1 auxiliary file: Chapters/Chapter1_Introduction.aux
 A level-1 auxiliary file: Chapters/Chapter2_Background.aux
@@ -12,45 +12,45 @@ Warning--empty booktitle in practical_dist_c
 Warning--empty chapter and pages in hpc_openstax
 Warning--empty chapter and pages in dist_systems_concepts
 Warning--empty author in mpi
-You've used 62 entries,
+You've used 61 entries,
             1791 wiz_defined-function locations,
-            763 strings with 13906 characters,
-and the built_in function-call counts, 14235 in all, are:
-= -- 1198
-> -- 715
+            760 strings with 13803 characters,
+and the built_in function-call counts, 14135 in all, are:
+= -- 1190
+> -- 714
 < -- 16
-+ -- 267
++ -- 266
 - -- 205
 * -- 740
-:= -- 2079
-add.period$ -- 189
-call.type$ -- 62
-change.case$ -- 57
+:= -- 2070
+add.period$ -- 187
+call.type$ -- 61
+change.case$ -- 56
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 718
-empty$ -- 1441
+cite$ -- 65
+duplicate$ -- 713
+empty$ -- 1423
 format.name$ -- 205
-if$ -- 3397
+if$ -- 3370
 int.to.chr$ -- 0
-int.to.str$ -- 62
+int.to.str$ -- 61
 missing$ -- 41
-newline$ -- 303
+newline$ -- 299
 num.names$ -- 57
-pop$ -- 282
+pop$ -- 276
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 530
+skip$ -- 524
 stack$ -- 0
 substring$ -- 523
-swap$ -- 274
+swap$ -- 273
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
 while$ -- 88
-width$ -- 64
-write$ -- 635
+width$ -- 63
+write$ -- 628
 (There were 4 warnings)

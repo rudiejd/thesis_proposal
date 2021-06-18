@@ -290,10 +290,6 @@ Ioannis Papadopoulos, Nathan Thomas, Adam Fidel, Nancy~M. Amato, and Lawrence
 Project euler: Problem 1.
 \newblock \url{projecteuler.net/problem=1}.
 
-\bibitem{stapl_gitlab}
-Gitlab.com: Standard adaptive parallel templating library.
-\newblock \url{gitlab.com/parasol-lab/stapl}.
-
 \bibitem{charm_93}
 Laxmikant~V. Kale and Sanjeev Krishnan.
 \newblock Charm++: A portable concurrent object oriented system based on c++.

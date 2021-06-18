@@ -1,19 +1,21 @@
 \documentclass[12pt, oneside]{book2}
 
 \usepackage{amssymb, amsmath, amscd, graphicx, fullpage, epstopdf, appendix, hyperref, color, subfig, setspace, tensor, url, verbatim, tabularx}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
 
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black, linktocpage}
 
 \onehalfspacing
-
-\lstset{
-	basicstyle=\ttfamily,
-	columns=fullflexible,
-	frame=single,
-	breaklines=true,
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{ForestGreen}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#},
+				showstringspaces=false,
+				numbers=left
 }
-
 
 
 \begin{document}
@@ -27,9 +29,10 @@ PC2L: A Parallel and Cloud Computing Library for Big Memory Applications
 \vspace{1.0cm}
 
 by John David Rudie Jr.
-
-\vspace{1.0cm}
+\vspace{1.0cm} \\
+\textbf{Abstract}
 \end{center}
+	While modern C++ has implemented many constructs to facilitate effective parallel computing, the language still lacks a coherent library of data structures for distributed computing. Other user-created libraries that have stepped in to fill this void place more of a focus on facilitating processor parallelism, i.e. synchronizing multiple threads across multiple processors across multiple computers. However, many real-world high-performance applications face a memory bottle-neck rather than a processing one. We propose a Parallel and Cloud Computing Library for Big Memory Applications, or PC2L, as a potential solution to this problem. PC2L will provide light-weight data structures intentionally designed and optimized for memory bound applications. 
 
 
 \newpage
@@ -74,6 +77,9 @@ Reader: Dr. Alan Ferrenberg\\
 \end{center}
 
 \end{titlepage}
+
+
+
 
 \singlespacing
 \setcounter{page}{3}
