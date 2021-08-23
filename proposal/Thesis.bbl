@@ -164,6 +164,33 @@ George~F. Coulouris.
 \newblock {\em Distributed systems: Concepts and design, Chapter 1}.
 \newblock Addison-Wesley, 2011.
 
+\bibitem{Sipser_2006}
+Michael Sipser.
+\newblock {\em Introduction to the theory of computation}.
+\newblock Thomson Course Technology, 2nd ed edition, 2006.
+
+\bibitem{Greenlaw_Hoover_Ruzzo_1995}
+Raymond Greenlaw, H.~James Hoover, and Walter~L. Ruzzo.
+\newblock {\em Limits to parallel computation: P-completeness theory}.
+\newblock Oxford University Press, 1995.
+
+\bibitem{Alvarez_Greenlaw_2000}
+C.~Alvarez and R.~Greenlaw.
+\newblock A compendium of problems complete for symmetric logarithmic space:.
+\newblock {\em Computational Complexity}, 9(2):123–145, Dec 2000.
+
+\bibitem{Stallings_2010}
+William Stallings.
+\newblock {\em Computer organization and architecture: designing for
+  performance}.
+\newblock Prentice Hall, 8th ed edition, 2010.
+
+\bibitem{Chou_DeWitt_1986}
+Hong~Tai Chou and David~J. DeWitt.
+\newblock An evaluation of buffer management strategies for relational database
+  systems.
+\newblock {\em Algorithmica}, 1(1–4):311–336, Nov 1986.
+
 \bibitem{n1682}
 Pete Becker.
 \newblock N1682: A multi-threading library for standard c++.
@@ -343,20 +370,5 @@ José~M. Abuín, Nuno Lopes, Luís Ferreira, Tomás~F. Pena, and Bertil
   Schmidt.
 \newblock Big data in metagenomics: Apache spark vs mpi.
 \newblock {\em PLOS ONE}, 15(10):1--20, 10 2020.
-
-\bibitem{stl_guide}
-David~R. Musser, Gillmer~J. Derge, and Atul Saini.
-\newblock {\em STL tutorial and reference guide: C++ programming with the
-  standard template library}.
-\newblock Addison-Wesley, 2005.
-
-\bibitem{cpp_ref_vector}
-cppreference.com - vector.
-\newblock \url{https://en.cppreference.com/w/cpp/container/vector}.
-
-\bibitem{use}
-Ahmed Seffah, Mohammad Donyaee, Rex Kline, and Harkirat Padda.
-\newblock Usability measurement and metrics: A consolidated model.
-\newblock {\em Software Quality Journal}, 14:159--178, 06 2006.
 
 \end{thebibliography}
