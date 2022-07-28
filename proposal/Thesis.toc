@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Tables}{iv}{chapter*.1}%
-\contentsline {chapter}{List of Figures}{v}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{v}{chapter*.1}%
+\contentsline {chapter}{List of Figures}{vi}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Contributions}{2}{section.1.2}%
@@ -41,5 +41,28 @@
 \contentsline {section}{\numberline {3.2}Workers}{24}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}CacheWorker}{24}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}CacheManager}{24}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {4}Conclusion}{26}{chapter.4}%
-\contentsline {chapter}{References}{27}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Research Overview}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Proposed Methodology}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Vector}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Unordered Multi-Map}{27}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Graph/Tree}{27}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Associated Algorithms}{28}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Distributed Memory Allocator}{28}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Dissemination of Results}{29}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Validation}{29}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Performance Comparison with Sequential Equivalents}{30}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Adaptivity Assessment}{30}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Scalability Measurement}{30}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Usability Measurement}{30}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Stopping Criteria}{31}{subsection.4.6.5}%
+\contentsline {chapter}{\numberline {5}The PC2L Library}{32}{chapter.5}%
+\contentsline {paragraph}{Code sample}{32}{section*.35}%
+\contentsline {section}{\numberline {5.1}Architecture}{33}{section.5.1}%
+\contentsline {subsubsection}{Block Division}{33}{section*.37}%
+\contentsline {chapter}{\numberline {6}Validation}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Performance Comparison with Sequential Equivalents}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Adaptivity Assessment}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Scalability Measurement}{35}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Usability Measurement}{36}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusion}{37}{chapter.7}%
+\contentsline {chapter}{References}{38}{chapter.7}%

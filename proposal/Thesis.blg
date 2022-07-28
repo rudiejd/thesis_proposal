@@ -1,56 +1,61 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Thesis.aux
 A level-1 auxiliary file: Chapters/Chapter1_Introduction.aux
 A level-1 auxiliary file: Chapters/Chapter2_Background.aux
 A level-1 auxiliary file: Chapters/Chapter3_Overview.aux
-A level-1 auxiliary file: Chapters/Chapter4_ResearchOverview.tex.aux
+A level-1 auxiliary file: Chapters/Chapter4_ResearchOverview.aux
+A level-1 auxiliary file: Chapters/Chapter4_ContentA.aux
+A level-1 auxiliary file: Chapters/Chapter5_ContentB.aux
+A level-1 auxiliary file: Chapters/Chapter6_ContentC.aux
+A level-1 auxiliary file: Chapters/Chapter7_Validation.aux
 A level-1 auxiliary file: Chapters/Chapter8_Conclusion.aux
 The style file: unsrt.bst
 Database file #1: Thesis.bib
+Warning--I didn't find a database entry for "usability"
 Warning--empty booktitle in practical_dist_c
 Warning--empty chapter and pages in hpc_openstax
 Warning--empty chapter and pages in dist_systems_concepts
 Warning--empty author in mpi
-You've used 63 entries,
+You've used 66 entries,
             1791 wiz_defined-function locations,
-            783 strings with 14185 characters,
-and the built_in function-call counts, 14584 in all, are:
-= -- 1233
-> -- 723
+            800 strings with 14715 characters,
+and the built_in function-call counts, 15114 in all, are:
+= -- 1275
+> -- 749
 < -- 16
-+ -- 270
-- -- 207
-* -- 772
-:= -- 2143
-add.period$ -- 194
-call.type$ -- 63
-change.case$ -- 58
++ -- 280
+- -- 214
+* -- 802
+:= -- 2223
+add.period$ -- 202
+call.type$ -- 66
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 67
-duplicate$ -- 737
-empty$ -- 1472
-format.name$ -- 207
-if$ -- 3470
+cite$ -- 70
+duplicate$ -- 761
+empty$ -- 1532
+format.name$ -- 214
+if$ -- 3593
 int.to.chr$ -- 0
-int.to.str$ -- 63
-missing$ -- 46
-newline$ -- 310
-num.names$ -- 60
-pop$ -- 283
+int.to.str$ -- 66
+missing$ -- 49
+newline$ -- 324
+num.names$ -- 62
+pop$ -- 297
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 527
+skip$ -- 538
 stack$ -- 0
-substring$ -- 556
-swap$ -- 275
+substring$ -- 577
+swap$ -- 278
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 92
-width$ -- 65
-write$ -- 654
-(There were 4 warnings)
+while$ -- 95
+width$ -- 68
+write$ -- 682
+(There were 5 warnings)

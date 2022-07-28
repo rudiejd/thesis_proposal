@@ -12,3 +12,8 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Memcached Architecture from \cite {memcached_linux}\relax }}{21}{figure.caption.30}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Thesis timeline\relax }}{29}{figure.caption.34}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Visualization of the difference from \cite {dist_java}. These red lines represent internal connections within a cluster. This is obviously a simplifcation, as all of these lines would likely be connected to a switch or some other communication mechanism.\relax }}{33}{figure.caption.36}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

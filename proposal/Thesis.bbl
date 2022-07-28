@@ -371,4 +371,19 @@ José~M. Abuín, Nuno Lopes, Luís Ferreira, Tomás~F. Pena, and Bertil
 \newblock Big data in metagenomics: Apache spark vs mpi.
 \newblock {\em PLOS ONE}, 15(10):1--20, 10 2020.
 
+\bibitem{stl_guide}
+David~R. Musser, Gillmer~J. Derge, and Atul Saini.
+\newblock {\em STL tutorial and reference guide: C++ programming with the
+  standard template library}.
+\newblock Addison-Wesley, 2005.
+
+\bibitem{cpp_ref_vector}
+cppreference.com - vector.
+\newblock \url{https://en.cppreference.com/w/cpp/container/vector}.
+
+\bibitem{use}
+Ahmed Seffah, Mohammad Donyaee, Rex Kline, and Harkirat Padda.
+\newblock Usability measurement and metrics: A consolidated model.
+\newblock {\em Software Quality Journal}, 14:159--178, 06 2006.
+
 \end{thebibliography}
