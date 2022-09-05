@@ -1,15 +1,14 @@
 \documentclass[12pt, oneside]{book2}
-
-\usepackage{amssymb, amsmath, amscd, graphicx, fullpage, epstopdf, appendix, hyperref, color, subfig, setspace, tensor, url, verbatim, tabularx}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{amssymb, amsmath, amscd, graphicx, fullpage, epstopdf, appendix, hyperref, color, subfig, setspace, tensor, url, verbatim, tabularx, pgfplots, algorithm, algpseudocode}
+\pgfplotsset{compat=1.18}
 \usepackage{listings}
 
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black, linktocpage}
 
 \onehalfspacing
 \lstset{language=C++,
-                basicstyle=\ttfamily,
-                keywordstyle=\color{blue}\ttfamily,
+                basicstyle=\ttfamily, keywordstyle=\color{blue}\ttfamily,
                 stringstyle=\color{red}\ttfamily,
                 commentstyle=\color{ForestGreen}\ttfamily,
                 morecomment=[l][\color{magenta}]{\#},
@@ -99,15 +98,12 @@ Reader: Dr. Alan Ferrenberg\\
 
 \mainmatter
 
-\include{Chapters/Chapter1_Introduction}
-\include{Chapters/Chapter2_Background}
-\include{Chapters/Chapter3_Overview}
-\include{Chapters/Chapter4_ResearchOverview.tex}
-\include{Chapters/Chapter4_ContentA.tex}
-\include{Chapters/Chapter5_ContentB.tex}
-\include{Chapters/Chapter6_ContentC.tex}
-\include{Chapters/Chapter7_Validation.tex}
-\include{Chapters/Chapter8_Conclusion}
+\include{Chapters/Introduction}
+\include{Chapters/Background}
+\include{Chapters/Methods.tex}
+\include{Chapters/Results.tex}
+\include{Chapters/Discussion.tex}
+\include{Chapters/Conclusion.tex}
 
 \backmatter
 

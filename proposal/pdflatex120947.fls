@@ -1,0 +1,4 @@
+PWD /home/jd/git/thesis_proposal/proposal
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
