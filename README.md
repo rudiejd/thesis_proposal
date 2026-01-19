@@ -10,8 +10,7 @@ This is my thesis proposal for Miami University.
 I use the following commands:
 
 ```bash
-pdflatex
-\build Thesis.tex
+pdflatex Thesis.tex
 ```
 
 A combined `Thesis.pdf` containing all chapters should be written.
