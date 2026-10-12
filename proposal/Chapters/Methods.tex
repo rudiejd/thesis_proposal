@@ -21,43 +21,7 @@ While there is one \texttt{CacheWorker} for every node included in a run of PC2L
 
 The library includes two data structures, \texttt{pc2l::Vector} and \texttt{pc2l::Map} which work the same way as their standard library equivalents. In order to relay information between machines on an interconnected computing cluster, MPI. A single write-back cache on the \texttt{CacheManager} node (MPI rank 0) is utilized, and memory is moved to the connected \texttt{CacheWorker} nodes as soon as the RAM space on the head node is exceeded. The code for the library is publicly available on github at \url{https://github.com/rudiejd/pc2l}, and it is intended to be used as a static shared library. Additionally, we have provided several applications which illustrate how PC2L might be used. Other than including some wind-up code which ensures that MPI is correctly initialized and terminated, data structures within the library can be used in exactly the same fashion as those in the libstdc++ STL.
 
-\paragraph{Code sample}
-This code solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
-\scriptsize
-\begin{lstlisting}[language=C++, caption=PC2L code sample for Project Euler number 1. Headers removed for brevity, captionpos=b]
 
-using ull = unsigned long long;
-
-int main(int argc, char *argv[]) {
-    // Boilerplate code to get MPI up and running
-    auto& pc2l = pc2l::System::get();
-    pc2l.initialize(argc, argv);
-    pc2l.start();
-    ull num = strtoull(argv[1], NULL, 0);
-
-    // initialize a vector of type unsigned long long filled with the number specified by 2nd command line argument
-    // this vector uses blocks of size 8 * sizeof(ull) = 8 * 8 = 64 bytes (on most systems)
-    // Note how this value can be provided by users
-    pc2l::Vector<ull, 8 * sizeof(ull)> vec(num);
-
-    // fill vector with values from 1 to n
-    std::iota(vec.begin(), vec.end(), 1);
-
-    // every number that does not have a 3 or 5 as a factor is set to 0
-    std::replace_if(vec.begin(), vec.end(), [](auto i) {
-        return !((i % 3) || (i % 5));
-    }, 0);
-
-    // sum all elements in the vector
-    auto total = std::accumulate(vec.begin(), vec.end(), 0ULL);
-
-    std::cout << "The total is " << total << std::endl;
-
-    // Boilerplate to shut down MPI
-    pc2l.stop();
-    pc2l.finalize();
-}
-\end{lstlisting}
 \normalsize
 \section{Architecture}
 \begin{figure}[h]
@@ -75,7 +39,7 @@ For each block within the system, a unique identifier is computed based on a com
 \subsubsection{Cache Eviction}
 Cache Eviction was another key aim of this project. Namely, providing varying cache eviction policies  which can be selected by the user to fit their application. Many cache eviction strategies were implemented by creating some sort of ordered queue (a \texttt{std::list}) which lives on the \texttt{CacheManager} node. The ordering of this queue then is defined by the selected eviction policy. For example, an LRU eviction policy would have the least recently used block at the back of the queue, with the most recently used block being placed in front of the queue. On the other hand, a time-aware LRU eviction strategy would be similar, except the queue would also have to be ordered by time to use (TTU). There are three strategies for cache eviction currently implemented in PC2L: Least Recently Used (LRU), Most Recently Used (MRU), Least Frequently Used (LFU), and Pseudo Least Recently Used (PLRU). 
 
-\paragraph{Least Recently Used}
+\paragraph{Least Recently Used Block Access}
 \begin{algorithm}
     \caption{Least Recently Used Eviction Strategy}
     \begin{algorithmic}[1]
@@ -100,7 +64,7 @@ Cache Eviction was another key aim of this project. Namely, providing varying ca
 \end{algorithm}
 The Least Recently Used eviction strategy is the default in PC2L. This implementation specifically takes a lot of influence from Johnson and Sasha's 2Q algorithm (reference here). Essentially, it aims to privilege the blocks which have appeared in the most recent calls to the cache. The main data structures of note in the algorithm illustrated above are the Queue and the cache - obviously the complexity of the algorithm is dependent on the complexity of insertion into and removal from these structures. PC2L utilizes a doubly-linked list to minimize the cost of insertion and removal from the queue. The cache is implemented using a hash-map with the unique block identifier described in \label{block_div} serving as the key, while the block servers as the value. 
 
-\paragraph{Most Recently Used}
+\paragraph{Most Recently Used Block Access}
 \begin{algorithm}
     \caption{Most Recently Used Eviction Strategy}
     \begin{algorithmic}[1]
@@ -127,7 +91,7 @@ In many ways, this eviction strategy is equivalent to the Least Recently Used st
 
 \paragraph{Least Frequently Used}
 \begin{algorithm}
-    \caption{Least Frequently Used Eviction Strategy}
+    \caption{Least Frequently Used Block Access}
     \begin{algorithmic}[1]
         \State $B \gets \texttt{Block}$
         \State $P \gets \texttt{Map}$
@@ -163,24 +127,72 @@ Instead of only considering the order of calls, as with LRU variants, the Least 
 
 
 \begin{algorithm}
-    \caption{Pseudo Least Recently Used}
+    \caption{Pseudo Least Recently Block Access}
     \begin{algorithmic}[1]
         \State $B = \texttt{Block}$
         \State $C = \texttt{Map}$
-        \State $Q = \texttt{Queue}$
         \State $n \ge 0$
-        \State $m = |Q|$
         \If{$B \not \in C$} 
             \If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
-                \State $T \gets Q_0$
-                \State $Q \gets Q - \{Q_0\}$\
-                \State $E \gets C_T$\
-                \State $M \gets M - \{C_T\}$\
-                \State $\texttt{SendToRemoteCacheWorker}(E)$\
+                \State $e = 0$
             \EndIf
+            
+            \For{$(i, \texttt{B}_{i}) \in \texttt{C}$}
+                \If{$\texttt{Old}(B_{i})$}
+                    \State $e \gets i$
+                    \State $\texttt{Break()}$
+                \EndIf
+                \State $\texttt{SendToRemoteCacheWorker}(B_{e})$\
+                \State $C \gets C - \{B_{e}\}$\
+            \EndFor
         \Else
             \State $Q \gets Q - \{Q_B\}$
         \EndIf
-        \State $\texttt{PushFront}(Q, B)$
+        \State $\texttt{FlagNew}(Q, B)$
     \end{algorithmic}
 \end{algorithm}
+
+\paragraph{Pseudo Least Recently Used}
+The Pseudo Least Recently Used eviction strategy is an approximation Least Recently Used designed to improve performance. Instead of employing a queue which can be used to ascertain the exact insertion order of each block, a boolean flag is set on each block to determine whether the block is new or old. All blocks start being flagged as old, and each access to a block switches it to being flagged as new. When an access causes all blocks in the cache to be flagged as new, all blocks except for the one being accessed are switched to old. On a cache miss, the first old block in the vector in index order is replaced, and the newly inserted block is flagged as new.
+
+
+\subsection{Code Samples}
+
+The code below code solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
+
+\begin{lstlisting}[language=C++, caption=PC3L code sample for Project Euler number 1. Headers removed for brevity, captionpos=b]
+
+using ull = unsigned long long;
+
+int main(int argc, char *argv[]) {
+    // Boilerplate code to get MPI up and running
+    auto& pc2l = pc2l::System::get();
+    pc2l.initialize(argc, argv);
+    pc2l.start();
+    ull num = strtoull(argv[1], NULL, 0);
+
+    // initialize a vector of type unsigned long long filled with the number specified by 2nd command line argument
+    // this vector uses blocks of size 8 * sizeof(ull) = 8 * 8 = 64 bytes (on most systems)
+    // Note how this value can be provided by users
+    pc2l::Vector<ull, 8 * sizeof(ull)> vec(num);
+
+    // fill vector with values from 1 to n
+    std::iota(vec.begin(), vec.end(), 1);
+
+    // every number that does not have a 3 or 5 as a factor is set to 0
+    std::replace_if(vec.begin(), vec.end(), [](auto i) {
+        return !((i % 3) || (i % 5));
+    }, 0);
+
+    // sum all elements in the vector
+    auto total = std::accumulate(vec.begin(), vec.end(), 0ULL);
+
+    std::cout << "The total is " << total << std::endl;
+
+    // Boilerplate to shut down MPI
+    pc2l.stop();
+    pc2l.finalize();
+}
+\end{lstlisting}
+
+

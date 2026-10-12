@@ -17,8 +17,8 @@ Pattamsetti Raja~Malleswara Rao.
 
 \bibitem{vt_cs}
 Distributed shared memory.
-\newblock
-  \url{courses.cs.vt.edu/~cs5204/fall99/distributedSys/amento/dsm.html}.
+\newblock \url{courses.cs.vt.edu/~
+  cs5204/fall99/distributedSys/amento/dsm.html}.
 
 \bibitem{virtualization}
 Dijiang Huang and Huijun Wu.
@@ -48,7 +48,7 @@ Philippe Charles, Christian Grothoff, Vijay Saraswat, Christopher Donawa, Allan
 \bibitem{chapel_rts_ppt}
 Greg Titus.
 \newblock The chapel runtime.
-\newblock \url{chapel-lang.org/presentations/Chapel-Runtime-Charm++13.pdf}.
+\newblock \url{ chapel-lang.org/presentations/Chapel-Runtime-Charm++13.pdf }.
 
 \bibitem{memcached_linux}
 Brad Fitzpatrick.
@@ -370,5 +370,9 @@ José~M. Abuín, Nuno Lopes, Luís Ferreira, Tomás~F. Pena, and Bertil
   Schmidt.
 \newblock Big data in metagenomics: Apache spark vs mpi.
 \newblock {\em PLOS ONE}, 15(10):1--20, 10 2020.
+
+\bibitem{google_benchmark}
+Google benchmark c++ library.
+\newblock \url{https://github.com/google/benchmark/}.
 
 \end{thebibliography}

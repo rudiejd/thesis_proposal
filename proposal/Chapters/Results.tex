@@ -1,54 +1,13 @@
 \chapter{Results}
 
-\begin{tikzpicture}
-\begin{axis}[
-    xmin=10^3, xmax=10^8,
-    ymin=0, ymax=25000,
-    xmode=log,
-    ymode=linear,
-    yticklabel style={
-        /pgf/number format/fixed,
-        /pgf/number format/precision=4
-    },
-    scaled y ticks=false,
-    ylabel=Milliseconds,
-    xlabel=Number of elements in vector
-]
+    \begin{figure}[h]
+		\centering
+		\includegraphics[width=0.65\textwidth]{Figures/vector_benchmarks_scalability.png}
+		\caption{pc2l::Vector Scalability Benchmark}
+		\label{fig:vector_benchmarks_scalability}
+    \end{figure}
 
-\addplot[
-    color=blue,
-    mark=square,
-    ]
-    coordinates {
-    (10^3,0.207)(10^4,2.025)(10^5,20.032)(10^6,215.423)(10^7,2038.319)(10^8,20531.186)
-    };
-\legend{\texttt{std::find}}
-\end{axis}
-\end{tikzpicture}
+Benchmarks were run using Google's C++ microbenchmarking library \cite{google_benchmark}. This library dynamically runs a warm-up for each benchmark, then runs the benchmark itself repeatedly until the benchmark results reach statistical stability. 
 
-\begin{tikzpicture}
-\begin{axis}[
-    xmin=10^3, xmax=10^9,
-    ymin=0, ymax=15000,
-    xmode=log,
-    ymode=linear,
-    yticklabel style={
-        /pgf/number format/fixed,
-        /pgf/number format/precision=4
-    },
-    scaled y ticks=false,
-    ylabel=Milliseconds,
-    xlabel=Number of elements in vector
-]
-
-\addplot[
-    color=red,
-    mark=circle,
-    ]
-    coordinates {
-    (10^3,0.001)(10^4,0.012)(10^5,0.115)(10^6,1.236)(10^7,12.650)(10^8,161.944)(10^9,10509.018)
-    };
-\legend{\texttt{std::find}}
-
-\end{axis}
-\end{tikzpicture}
+The \texttt{pc2l::Vector} is the core data structure of PC2L. In fact, all of the other data structures are implemented using the vector as a sub-component. As a result, benchmarks were focused around measuring the performance of the vector with the expectation that these results would extend to any data 
+structures that can be created with it. Figure \ref{fig:vector_benchmarks_scalability} demonstrates how the performance of various operations on the \texttt{pc2l::Vector} change with different inputs. Each individual graph represents a series of runs for a fixed benchmark on a fixed number of MPI processes. The x-axis of each graph is the number of elements in a \texttt{pc2l::Vector}, and the y-axis is the wall-time (in milliseconds) that was reported by Google Benchmark. 
