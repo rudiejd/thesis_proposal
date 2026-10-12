@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  12 OCT 2026 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  12 OCT 2026 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1046,11 +1046,15 @@ File: Figures/pc2l_architecture.png Graphic file (type png)
 <use Figures/pc2l_architecture.png>
 Package pdftex.def Info: Figures/pc2l_architecture.png  used on input line 29.
 (pdftex.def)             Requested size: 305.33789pt x 186.01381pt.
- [25 <./Figures/pc2l_architecture.png (PNG copy)>]
+ [25 <./Figures/pc2l_architecture.png (PNG copy)>] [26]
+
+LaTeX Warning: Reference `lst:euler language=C++' on page 27 undefined on input
+ line 56.
+
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 44.
- [26] [27]
-Overfull \hbox (382.40242pt too wide) in paragraph at lines 174--175
+put line 60.
+
+Overfull \hbox (382.40242pt too wide) in paragraph at lines 182--183
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -1058,26 +1062,26 @@ Overfull \hbox (382.40242pt too wide) in paragraph at lines 174--175
  []
 
 
-Overfull \hbox (204.56087pt too wide) in paragraph at lines 175--176
+Overfull \hbox (204.56087pt too wide) in paragraph at lines 183--184
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][] 
  []
 
-[28] [29]
-Overfull \hbox (56.35957pt too wide) in paragraph at lines 182--183
+
+Overfull \hbox (56.35957pt too wide) in paragraph at lines 190--191
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[30]) [31]
+) [27] [28] [29] [30] [31]
 \openout2 = `Chapters/Results.aux'.
 
  (./Chapters/Results.tex
 Chapter 4.
-<Figures/vector_benchmarks_scalability.png, id=749, 1749.53625pt x 1517.67pt>
+<Figures/vector_benchmarks_scalability.png, id=754, 1749.53625pt x 1517.67pt>
 File: Figures/vector_benchmarks_scalability.png Graphic file (type png)
 <use Figures/vector_benchmarks_scalability.png>
 Package pdftex.def Info: Figures/vector_benchmarks_scalability.png  used on inp
@@ -1126,17 +1130,21 @@ pel-[]lang . org / presentations /
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: EBDEDB7791B447BBF054F576CA0E56CD;4330.
  ) 
 Here is how much of TeX's memory you used:
- 35494 strings out of 469515
- 794795 string characters out of 5470807
- 1484577 words of memory out of 5000000
- 63217 multiletter control sequences out of 15000+600000
+ 35502 strings out of 469515
+ 794904 string characters out of 5470807
+ 1488577 words of memory out of 5000000
+ 63224 multiletter control sequences out of 15000+600000
  635986 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,9n,108p,2400b,1991s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,9n,108p,2400b,1268s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1146,10 +1154,10 @@ are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (45 pages, 1131449 bytes).
+Output written on Thesis.pdf (45 pages, 1131048 bytes).
 PDF statistics:
- 945 PDF objects out of 1000 (max. 8388607)
- 842 compressed objects within 9 object streams
- 341 named destinations out of 1000 (max. 500000)
+ 950 PDF objects out of 1000 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 342 named destinations out of 1000 (max. 500000)
  329 words of extra memory for PDF output out of 10000 (max. 10000000)
 

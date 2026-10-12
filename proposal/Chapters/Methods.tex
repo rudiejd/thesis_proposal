@@ -39,128 +39,136 @@ For each block within the system, a unique identifier is computed based on a com
 \subsubsection{Cache Eviction}
 Cache Eviction was another key aim of this project. Namely, providing varying cache eviction policies  which can be selected by the user to fit their application. Many cache eviction strategies were implemented by creating some sort of ordered queue (a \texttt{std::list}) which lives on the \texttt{CacheManager} node. The ordering of this queue then is defined by the selected eviction policy. For example, an LRU eviction policy would have the least recently used block at the back of the queue, with the most recently used block being placed in front of the queue. On the other hand, a time-aware LRU eviction strategy would be similar, except the queue would also have to be ordered by time to use (TTU). There are three strategies for cache eviction currently implemented in PC2L: Least Recently Used (LRU), Most Recently Used (MRU), Least Frequently Used (LFU), and Pseudo Least Recently Used (PLRU). 
 
-\paragraph{Least Recently Used Block Access}
-\begin{algorithm}
-    \caption{Least Recently Used Eviction Strategy}
-    \begin{algorithmic}[1]
-        \State $B = \texttt{Block}$
-        \State $C = \texttt{Map}$
-        \State $Q = \texttt{Queue}$
-        \State $n \ge 0$
-        \State $m = |Q|$
-        \If{$B \not \in C$} 
-            \If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
-                \State $T \gets Q_m$
-                \State $Q \gets Q - \{Q_m\}$\
-                \State $E \gets C_T$\
-                \State $M \gets M - \{C_T\}$\
-                \State $\texttt{SendToRemoteCacheWorker}(E)$\
-            \EndIf
-        \Else
-            \State $Q \gets Q - \{Q_B\}$
-        \EndIf
-        \State $\texttt{PushFront}(Q, B)$
-    \end{algorithmic}
-\end{algorithm}
-The Least Recently Used eviction strategy is the default in PC2L. This implementation specifically takes a lot of influence from Johnson and Sasha's 2Q algorithm (reference here). Essentially, it aims to privilege the blocks which have appeared in the most recent calls to the cache. The main data structures of note in the algorithm illustrated above are the Queue and the cache - obviously the complexity of the algorithm is dependent on the complexity of insertion into and removal from these structures. PC2L utilizes a doubly-linked list to minimize the cost of insertion and removal from the queue. The cache is implemented using a hash-map with the unique block identifier described in \label{block_div} serving as the key, while the block servers as the value. 
+The Least Recently Used eviction strategy, as described in \ref{alg:lru} is the default in PC2L. This implementation specifically takes a lot of influence from Johnson and Sasha's 2Q algorithm (reference here). Essentially, it aims to privilege the blocks which have appeared in the most recent calls to the cache. The main data structures of note in the algorithm illustrated above are the Queue and the cache - obviously the complexity of the algorithm is dependent on the complexity of insertion into and removal from these structures. PC2L utilizes a doubly-linked list to minimize the cost of insertion and removal from the queue. The cache is implemented using a hash-map with the unique block identifier described in \label{block_div} serving as the key, while the block servers as the value. 
 
 \paragraph{Most Recently Used Block Access}
-\begin{algorithm}
-    \caption{Most Recently Used Eviction Strategy}
-    \begin{algorithmic}[1]
-        \State $B \gets \texttt{Block}$
-        \State $C \gets \texttt{Map}$
-        \State $Q \gets \texttt{Queue}$
-        \State $n \ge 0$
-        \State $m \gets |Q|$
-        \If{$B \not \in C$} 
-            \If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
-                \State $T \gets Q_1$
-                \State $Q \gets Q - \{Q_1\}$\
-                \State $E \gets C_T$\
-                \State $M \gets M - \{C_T\}$\
-                \State $\texttt{SendToRemoteCacheWorker}(E)$\
-            \EndIf
-        \Else
-            \State $Q \gets Q - \{Q_B\}$
-        \EndIf
-        \State $\texttt{PushFront}(Q, B)$
-    \end{algorithmic}
-\end{algorithm}
-In many ways, this eviction strategy is equivalent to the Least Recently Used strategy. The only key difference here is that under the Most Recently Used strategy, the blocks which have appeared in the least recent calls to the cache are privileged. This cache eviction strategy has been shown to provide significant performance increase for applications which follow looping sequential access patterns (reference here).
+In many ways, the Most Recently Used eviction strategy, as described in \ref{alg:mru}, is equivalent to the Least Recently Used strategy. The only key difference here is that under the Most Recently Used strategy, the blocks which have appeared in the least recent calls to the cache are privileged. This cache eviction strategy has been shown to provide significant performance increase for applications which follow looping sequential access patterns (reference here).
 
-\paragraph{Least Frequently Used}
-\begin{algorithm}
-    \caption{Least Frequently Used Block Access}
-    \begin{algorithmic}[1]
-        \State $B \gets \texttt{Block}$
-        \State $P \gets \texttt{Map}$
-        \State $Q \gets \texttt{QueueOfQueues}$ 
-        \State $n \ge 0$
-        \State $m \gets |Q|$
-        \If{$B \not \in P$} 
-            \If{$\texttt{CurrentSize}(Q) + \texttt{Size}(B) > n$} 
-                \State $S \gets Q_1$
-                \State $m \gets |S|$
-                \State $E \gets S_m$
-                \State $S \gets S - \{S_m\}$
-                \If{$|S| = 0$}
-                    \State $Q \gets Q - \{S\}$
-                \EndIf
-                \State $\texttt{SendToRemoteCacheWorker}(E)$\
-            \EndIf
-        \Else
-            \State $I \gets P_B$
-            \State $IQ \gets Q_{\texttt{Frequency}(I)}$
-            \State $IQ \gets IQ - \{I\}$
-            \If{$|IQ| = 0$}
-                \State $Q \gets Q - \{Q_{\texttt{Frequency}(I)}\}$
-            \EndIf
-            \State $\texttt{Frequency}(I) \gets \texttt{Frequency}(I) + 1$
-            \State $Q_{\texttt{Frequency}(I)} \gets Q_{\texttt{Frequency}(I)} \cup \texttt{I}$
-            \State $P_B \gets {Q_{\texttt{Frequency}(I)}}_1$
-        \EndIf
-        \State $\texttt{PushFront}(Q, B)$
-    \end{algorithmic}
-\end{algorithm}
-Instead of only considering the order of calls, as with LRU variants, the Least Frequently Used strategy attempts to also privilege items which have been used many times. The algorithm described above is adapted from that which is described in (refernce to O(1) LFU algorithm). The main idea is that instead of one queue, there is now one queue for each value in the range of access frequencies for each item currently in the cache. In the event that two or more blocks are tied for the minimum frequency $m$, the LRU block in the $m$-queue will be selected. In other words, the LFU strategy falls back to LRU in the event of a tie. 
+Instead of only considering the order of calls, as with LRU variants, the Least Frequently Used strategy, as described in algorithm \ref{alg:lfu}, attempts to also privilege items which have been used many times. The algorithm described above is adapted from that which is described in (refernce to O(1) LFU algorithm). The main idea is that instead of one queue, there is now one queue for each value in the range of access frequencies for each item currently in the cache. In the event that two or more blocks are tied for the minimum frequency $m$, the LRU block in the $m$-queue will be selected. In other words, the LFU strategy falls back to LRU in the event of a tie. 
 
-
-\begin{algorithm}
-    \caption{Pseudo Least Recently Block Access}
-    \begin{algorithmic}[1]
-        \State $B = \texttt{Block}$
-        \State $C = \texttt{Map}$
-        \State $n \ge 0$
-        \If{$B \not \in C$} 
-            \If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
-                \State $e = 0$
-            \EndIf
-            
-            \For{$(i, \texttt{B}_{i}) \in \texttt{C}$}
-                \If{$\texttt{Old}(B_{i})$}
-                    \State $e \gets i$
-                    \State $\texttt{Break()}$
-                \EndIf
-                \State $\texttt{SendToRemoteCacheWorker}(B_{e})$\
-                \State $C \gets C - \{B_{e}\}$\
-            \EndFor
-        \Else
-            \State $Q \gets Q - \{Q_B\}$
-        \EndIf
-        \State $\texttt{FlagNew}(Q, B)$
-    \end{algorithmic}
-\end{algorithm}
 
 \paragraph{Pseudo Least Recently Used}
-The Pseudo Least Recently Used eviction strategy is an approximation Least Recently Used designed to improve performance. Instead of employing a queue which can be used to ascertain the exact insertion order of each block, a boolean flag is set on each block to determine whether the block is new or old. All blocks start being flagged as old, and each access to a block switches it to being flagged as new. When an access causes all blocks in the cache to be flagged as new, all blocks except for the one being accessed are switched to old. On a cache miss, the first old block in the vector in index order is replaced, and the newly inserted block is flagged as new.
+The Pseudo Least Recently Used eviction strategy, as described in algorithm \ref{alg:plru}, is an approximation Least Recently Used designed to improve performance. Instead of employing a queue which can be used to ascertain the exact insertion order of each block, a boolean flag is set on each block to determine whether the block is new or old. All blocks start being flagged as old, and each access to a block switches it to being flagged as new. When an access causes all blocks in the cache to be flagged as new, all blocks except for the one being accessed are switched to old. On a cache miss, the first old block in the vector in index order is replaced, and the newly inserted block is flagged as new.
 
 
 \subsection{Code Samples}
 
-The code below code solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
+The code in \ref{lst:euler language=C++} solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
 
-\begin{lstlisting}[language=C++, caption=PC3L code sample for Project Euler number 1. Headers removed for brevity, captionpos=b]
+\paragraph{Least Recently Used Block Access}
+\begin{algorithm}
+	\caption{Least Recently Used Eviction Strategy}
+	\label{alg:lru}
+	\begin{algorithmic}[1]
+		\State $B = \texttt{Block}$
+		\State $C = \texttt{Map}$
+		\State $Q = \texttt{Queue}$
+		\State $n \ge 0$
+		\State $m = |Q|$
+		\If{$B \not \in C$} 
+		\If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
+		\State $T \gets Q_m$
+		\State $Q \gets Q - \{Q_m\}$\
+		\State $E \gets C_T$\
+		\State $M \gets M - \{C_T\}$\
+		\State $\texttt{SendToRemoteCacheWorker}(E)$\
+		\EndIf
+		\Else
+		\State $Q \gets Q - \{Q_B\}$
+		\EndIf
+		\State $\texttt{PushFront}(Q, B)$
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{Most Recently Used Eviction Strategy}
+	\label{alg:mru}
+	\begin{algorithmic}[1]
+		\State $B \gets \texttt{Block}$
+		\State $C \gets \texttt{Map}$
+		\State $Q \gets \texttt{Queue}$
+		\State $n \ge 0$
+		\State $m \gets |Q|$
+		\If{$B \not \in C$} 
+		\If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
+		\State $T \gets Q_1$
+		\State $Q \gets Q - \{Q_1\}$\
+		\State $E \gets C_T$\
+		\State $M \gets M - \{C_T\}$\
+		\State $\texttt{SendToRemoteCacheWorker}(E)$\
+		\EndIf
+		\Else
+		\State $Q \gets Q - \{Q_B\}$
+		\EndIf
+		\State $\texttt{PushFront}(Q, B)$
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Least Frequently Used}
+\begin{algorithm}
+	\caption{Least Frequently Used Block Access}
+	\label{alg:lfu}
+	\begin{algorithmic}[1]
+		\State $B \gets \texttt{Block}$
+		\State $P \gets \texttt{Map}$
+		\State $Q \gets \texttt{QueueOfQueues}$ 
+		\State $n \ge 0$
+		\State $m \gets |Q|$
+		\If{$B \not \in P$} 
+		\If{$\texttt{CurrentSize}(Q) + \texttt{Size}(B) > n$} 
+		\State $S \gets Q_1$
+		\State $m \gets |S|$
+		\State $E \gets S_m$
+		\State $S \gets S - \{S_m\}$
+		\If{$|S| = 0$}
+		\State $Q \gets Q - \{S\}$
+		\EndIf
+		\State $\texttt{SendToRemoteCacheWorker}(E)$\
+		\EndIf
+		\Else
+		\State $I \gets P_B$
+		\State $IQ \gets Q_{\texttt{Frequency}(I)}$
+		\State $IQ \gets IQ - \{I\}$
+		\If{$|IQ| = 0$}
+		\State $Q \gets Q - \{Q_{\texttt{Frequency}(I)}\}$
+		\EndIf
+		\State $\texttt{Frequency}(I) \gets \texttt{Frequency}(I) + 1$
+		\State $Q_{\texttt{Frequency}(I)} \gets Q_{\texttt{Frequency}(I)} \cup \texttt{I}$
+		\State $P_B \gets {Q_{\texttt{Frequency}(I)}}_1$
+		\EndIf
+		\State $\texttt{PushFront}(Q, B)$
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{Pseudo Least Recently Block Access}
+	\label{alg:plru}
+	\begin{algorithmic}[1]
+		\State $B = \texttt{Block}$
+		\State $C = \texttt{Map}$
+		\State $n \ge 0$
+		\If{$B \not \in C$} 
+		\If{$\texttt{CurrentSize}(C) + \texttt{Size}(B) > n$} 
+		\State $e = 0$
+		\EndIf
+		
+		\For{$(i, \texttt{B}_{i}) \in \texttt{C}$}
+		\If{$\texttt{Old}(B_{i})$}
+		\State $e \gets i$
+		\State $\texttt{Break()}$
+		\EndIf
+		\State $\texttt{SendToRemoteCacheWorker}(B_{e})$\
+		\State $C \gets C - \{B_{e}\}$\
+		\EndFor
+		\Else
+		\State $Q \gets Q - \{Q_B\}$
+		\EndIf
+		\State $\texttt{FlagNew}(Q, B)$
+	\end{algorithmic}
+\end{algorithm}
+
+
+\begin{lstlisting}[label=lst:euler language=C++, caption=PC3L code sample for Project Euler number 1. Headers removed for brevity, captionpos=b, float]
 
 using ull = unsigned long long;
 
