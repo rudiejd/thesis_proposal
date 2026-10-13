@@ -6,7 +6,6 @@
 		\caption{pc2l::Vector Scalability Benchmark}
 		\label{fig:vector_benchmarks_scalability}
     \end{figure}
-
 Benchmarks were run using Google's C++ microbenchmarking library \cite{google_benchmark}. This library dynamically runs a warm-up for each benchmark, then runs the benchmark itself repeatedly until the benchmark results reach statistical stability. 
 
 The \texttt{pc2l::Vector} is the core data structure of PC2L. In fact, all of the other data structures are implemented using the vector as a sub-component. As a result, benchmarks were focused around measuring the performance of the vector with the expectation that these results would extend to any data 

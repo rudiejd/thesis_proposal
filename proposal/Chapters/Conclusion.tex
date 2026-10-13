@@ -1,2 +1,13 @@
 \chapter{Conclusion} \label{conclusion}
-In summary, PC2L will be a C++ framework that provides standard, distributed data structures comparable to those found in the C++ STL. Through exploration of numerous alternative libraries that attempt to achieve this goal, we extracted many contributions in the form of useful constructs and design patterns. We listed and justified the initial set of data structures that will be implemented in PC2L. We provided a description of the underlying concepts common to each of these data structures. We provided a timeline for the development of PC2L, stopping criteria for finishing work on PC2L, and evaluation criteria for demonstrating the usefulness of the library.  
+
+\section{Contribution}
+PC2L is a C++ framework that provides standard, distributed data structures comparable to those found in the C++ STL. Through exploration of numerous alternative libraries that attempt to achieve this goal, we extracted many contributions in the form of useful constructs and design patterns. We listed and justified the initial set of data structures that will be implemented in PC2L. We provided a description of the underlying concepts common to each of these data structures. We provided a timeline for the development of PC2L, stopping criteria for finishing work on PC2L, and evaluation criteria for demonstrating the usefulness of the library.  
+
+
+\section{Future Work}
+\label{sec:future}
+One could concieve of many potential enhancements to this library.  These can generally be split into functional and non-functional improvements.
+
+In terms of functional improvements, many more data structures could be added to PC2L. PC2L implements a vector, a map, and a matrix, but the C++ standard library includes a queue, a priority queue, a deque, a stack, and a linked list. Mainly, development of a distributed linked list might be a fruitful direction for future work since that could be a building block for distributed graphs within the library. Additionally, cache eviction could be extended. The library currently only supports evicting items on the single writer node, but an improved version might be capable of evicting under-utilized items to disk on the reader nodes.
+
+With respect to non-functional improvements, the developer experience for users of the library could be greatly improved. Currently, as demonstrated by the code samples, there is some leaking of abstractions from MPI. For example, one has to check MPI rank before writing to \texttt{stdout}. One could imagine a future library that facilitates I/O while keeping most of the details of MPI opaque to the user. The ideal state would be a library that functions almost exactly like the C++ standard library, without the need for primitives like \texttt{pc2l::start} and \texttt{pc2l::stop}.

@@ -24,6 +24,7 @@ The library includes two data structures, \texttt{pc2l::Vector} and \texttt{pc2l
 
 \normalsize
 \section{Architecture}
+\label{sec:arch}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.65\textwidth]{Figures/pc2l_architecture.png}
@@ -36,14 +37,26 @@ As previously discussed, PC2L's architecture is based on a single "writer" node 
 Every time an item within a PC2L data structure is retrieved or stored, there is a chance that it may need to be retrieved or sent to a remote node based on the current state of the head node. Sending individual objects would be incredibly inefficient, especially considering that a single data structure within a big memory project could potentially contain trillions of objects. As a result, the objects within a data structure are grouped into \textbf{blocks} of a user defined size. These blocks are then transferred together. For example, if a user wishes to manipulate a \texttt{pc2l::Vector} of one trillion integers ($4*10^{12}$ bytes), they might consider using blocks of size $4*10^6$ so that at least a million integers are stored in adjacent memory in one block. Performance increases from larger blocks rely on the fact that users are likely to access items in the same spatial region of a data structure, and everyapplication - even every data structure within an application - may have a different sweet spot for block size. As a result, the library allows users to set heterogeneous block sizes by changing template parameters. 
 For each block within the system, a unique identifier is computed based on a combination of the data structure that generated the block and the block's relative position within said data structure. This identifier is then used within all of the caching infrastructure to uniquely identify blocks. 
 
-\subsubsection{Cache Eviction}
-Cache Eviction was another key aim of this project. Namely, providing varying cache eviction policies  which can be selected by the user to fit their application. Many cache eviction strategies were implemented by creating some sort of ordered queue (a \texttt{std::list}) which lives on the \texttt{CacheManager} node. The ordering of this queue then is defined by the selected eviction policy. For example, an LRU eviction policy would have the least recently used block at the back of the queue, with the most recently used block being placed in front of the queue. On the other hand, a time-aware LRU eviction strategy would be similar, except the queue would also have to be ordered by time to use (TTU). There are three strategies for cache eviction currently implemented in PC2L: Least Recently Used (LRU), Most Recently Used (MRU), Least Frequently Used (LFU), and Pseudo Least Recently Used (PLRU). 
+\begin{figure}
+	\includegraphics[width=0.85\textwidth]{eviction_diagram.png}
+	\caption{Example of cache eviction in PC2L. User code modifies some part of a data structure and the library opaquely transfers different blocks into memory depending on the selected eviction strategy.}
+	\label{fig:eviction}
+\end{figure}
 
+\subsubsection{Cache Eviction}
+In order to maintain a data structure which exceeds the memory limits of one computer in a cluster, the library must be able to freely transfer parts of the data structure to different members of the cluster. Because we selected the single-writer architecture described in section \ref{sec:arch}, and every constituent member of a data structure starts on the writer node, space on the writer was scarce, and we needed some sort of mechanism for removing unused parts of the data structure from the writer. 
+
+This problem is generally called cache eviction. Figure \ref{fig:eviction} demonstrates how this process works with the PC2L writer. Essentially, all members of a data structure begin their lifetime on the writer node. As new elements are inserted into the writer node, the node eventually reaches a fixed maximum capacity. Each insert after the writer node is at capacity results in an eviction from that node. Note that, within PC2L, eviction will only occur on the writer node. This limitation, mentioned in   section section \ref{sec:future}, is generally acceptable because the architecture of PC2L allows for many readers, and thus a user of the library could add readers. 
+
+We provide various cache eviction policies  which can be selected by the user to fit their application. Many cache eviction strategies were implemented by creating some sort of ordered queue (a \texttt{std::list}) which lives on the \texttt{CacheManager} node. The ordering of this queue then is defined by the selected eviction policy. For example, an LRU eviction policy would have the least recently used block at the back of the queue, with the most recently used block being placed in front of the queue. On the other hand, a time-aware LRU eviction strategy would be similar, except the queue would also have to be ordered by time to use (TTU). There are three strategies for cache eviction currently implemented in PC2L: Least Recently Used (LRU), Most Recently Used (MRU), Least Frequently Used (LFU), and Pseudo Least Recently Used (PLRU).
+
+\paragraph{Least Recently Used Block Access}
 The Least Recently Used eviction strategy, as described in \ref{alg:lru} is the default in PC2L. This implementation specifically takes a lot of influence from Johnson and Sasha's 2Q algorithm (reference here). Essentially, it aims to privilege the blocks which have appeared in the most recent calls to the cache. The main data structures of note in the algorithm illustrated above are the Queue and the cache - obviously the complexity of the algorithm is dependent on the complexity of insertion into and removal from these structures. PC2L utilizes a doubly-linked list to minimize the cost of insertion and removal from the queue. The cache is implemented using a hash-map with the unique block identifier described in \label{block_div} serving as the key, while the block servers as the value. 
 
-\paragraph{Most Recently Used Block Access}
+33\paragraph{Most Recently Used Block Access}
 In many ways, the Most Recently Used eviction strategy, as described in \ref{alg:mru}, is equivalent to the Least Recently Used strategy. The only key difference here is that under the Most Recently Used strategy, the blocks which have appeared in the least recent calls to the cache are privileged. This cache eviction strategy has been shown to provide significant performance increase for applications which follow looping sequential access patterns (reference here).
 
+\paragraph{Least Frequently Used}
 Instead of only considering the order of calls, as with LRU variants, the Least Frequently Used strategy, as described in algorithm \ref{alg:lfu}, attempts to also privilege items which have been used many times. The algorithm described above is adapted from that which is described in (refernce to O(1) LFU algorithm). The main idea is that instead of one queue, there is now one queue for each value in the range of access frequencies for each item currently in the cache. In the event that two or more blocks are tied for the minimum frequency $m$, the LRU block in the $m$-queue will be selected. In other words, the LFU strategy falls back to LRU in the event of a tie. 
 
 
@@ -53,9 +66,8 @@ The Pseudo Least Recently Used eviction strategy, as described in algorithm \ref
 
 \subsection{Code Samples}
 
-The code in \ref{lst:euler language=C++} solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
+In addition to understanding the algorithms underlying PC2L, it is important to understand how a developer would integrate with the library. The code in \ref{lst:minimal language=C++} The code in \ref{lst:euler language=C++} solves the first project euler problem, which asks for the sum of all numbers below $n$ that are multiples of 3 or 5. \cite{euler_1}. Compare to the STAPL code mentioned in Chapter 2.
 
-\paragraph{Least Recently Used Block Access}
 \begin{algorithm}
 	\caption{Least Recently Used Eviction Strategy}
 	\label{alg:lru}
@@ -104,7 +116,6 @@ The code in \ref{lst:euler language=C++} solves the first project euler problem,
 	\end{algorithmic}
 \end{algorithm}
 
-\paragraph{Least Frequently Used}
 \begin{algorithm}
 	\caption{Least Frequently Used Block Access}
 	\label{alg:lfu}
@@ -168,7 +179,35 @@ The code in \ref{lst:euler language=C++} solves the first project euler problem,
 \end{algorithm}
 
 
-\begin{lstlisting}[label=lst:euler language=C++, caption=PC3L code sample for Project Euler number 1. Headers removed for brevity, captionpos=b, float]
+\begin{lstlisting}[language=C++, caption=PC2L minimal example, label=lst:minimal, captionpos=b, float]
+int main(int argc, char *argv[]) {
+	// Boilerplate code to get MPI up and running
+	auto &pc2l = pc2l::System::get();
+	pc2l.initialize(argc, argv);
+	// 50 block cache
+	pc2l.setCacheSize(50 * 100 * sizeof(int));
+	pc2l.start();
+	
+	if (pc2l::MPI_GET_RANK() == 0) {
+		
+		pc2l::Vector<int, 8 * sizeof(int)> vec;
+		
+		for (auto i = 0; i < 100; i++) {
+			vec.push_back(i);
+		}
+		
+		for (auto i = 0; i < vec.size(); i++) {
+			std::cout << "vec[" << i << "]=" << vec[i] << std::endl;
+		}
+	}
+	
+	pc2l.stop();
+	pc2l.finalize();
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=C++, caption=PC2L code sample for Project Euler number 1. Headers removed for brevity, label=lst:euler, captionpos=b, float]
 
 using ull = unsigned long long;
 
@@ -202,5 +241,4 @@ int main(int argc, char *argv[]) {
     pc2l.finalize();
 }
 \end{lstlisting}
-
 

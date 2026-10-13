@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  12 OCT 2026 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  12 OCT 2026 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -766,18 +766,34 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip65
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count358
+) (/usr/share/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2024/09/27 v2.7.0 LaTeX CSV file processing
+)
+(/usr/share/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
+Package: csvsimple-legacy 2024/09/27 version 2.7.0 LaTeX2e CSV file processing
+
+(/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\csv@file=\read4
+\c@csvinputline=\count358
+\c@csvrow=\count359
+\c@csvcol=\count360
+\csv@out=\write4
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count361
 \lst@gtempboxa=\box71
 \lst@token=\toks53
-\lst@length=\count359
+\lst@length=\count362
 \lst@currlwidth=\dimen303
-\lst@column=\count360
-\lst@pos=\count361
+\lst@column=\count363
+\lst@pos=\count364
 \lst@lostspace=\dimen304
 \lst@width=\dimen305
-\lst@newlines=\count362
-\lst@lineno=\count363
+\lst@newlines=\count365
+\lst@lineno=\count366
 \lst@maxwidth=\dimen306
 
 (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
@@ -785,8 +801,8 @@ File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count364
-\lst@skipnumbers=\count365
+\c@lstnumber=\count367
+\lst@skipnumbers=\count368
 \lst@framebox=\box72
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -813,11 +829,10 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count366
+\l__color_backend_stack_int=\count369
 ) (./Thesis.aux
 (./Chapters/Introduction.aux) (./Chapters/Background.aux)
-(./Chapters/Methods.aux) (./Chapters/Results.aux) (./Chapters/Discussion.aux)
-(./Chapters/Conclusion.aux))
+(./Chapters/Methods.aux) (./Chapters/Results.aux) (./Chapters/Conclusion.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -841,22 +856,22 @@ LaTeX Font Info:    ... okay on input line 20.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
+\scratchcounter=\count370
 \scratchdimen=\dimen307
 \scratchbox=\box73
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\nofMPsegments=\count371
+\nofMParguments=\count372
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count370
+\MPscratchCnt=\count373
 \MPscratchDim=\dimen308
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPnumerator=\count374
+\makeMPintoPDFobject=\count375
 \everyMPtoPDFconversion=\toks55
 )
 Package hyperref Info: Link coloring ON on input line 20.
  (./Thesis.out) (./Thesis.out)
-\@outlinefile=\write4
-\openout4 = `Thesis.out'.
+\@outlinefile=\write5
+\openout5 = `Thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -867,7 +882,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count373
+\c@lstlisting=\count376
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
@@ -887,20 +902,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3
 
 ])
-\tf@toc=\write5
-\openout5 = `Thesis.toc'.
+\tf@toc=\write6
+\openout6 = `Thesis.toc'.
 
  [4] (./Thesis.lot)
-\tf@lot=\write6
-\openout6 = `Thesis.lot'.
+\tf@lot=\write7
+\openout7 = `Thesis.lot'.
 
 
 [5
 
 
 ] (./Thesis.lof)
-\tf@lof=\write7
-\openout7 = `Thesis.lof'.
+\tf@lof=\write8
+\openout8 = `Thesis.lof'.
 
  [6
 
@@ -910,7 +925,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./Chapters/Introduction.tex
 Chapter 1.
-<Figures/global_data_growth.jpg, id=243, 1003.5894pt x 745.8264pt>
+<Figures/global_data_growth.jpg, id=250, 1003.5894pt x 745.8264pt>
 File: Figures/global_data_growth.jpg Graphic file (type jpg)
 <use Figures/global_data_growth.jpg>
 Package pdftex.def Info: Figures/global_data_growth.jpg  used on input line 8.
@@ -930,7 +945,7 @@ l.17
 
  (./Chapters/Background.tex
 Chapter 2.
-<Figures/parallel_vs_distributed.png, id=285, 447.17062pt x 194.97844pt>
+<Figures/parallel_vs_distributed.png, id=292, 447.17062pt x 194.97844pt>
 File: Figures/parallel_vs_distributed.png Graphic file (type png)
 <use Figures/parallel_vs_distributed.png>
 Package pdftex.def Info: Figures/parallel_vs_distributed.png  used on input lin
@@ -942,13 +957,13 @@ e 8.
 
 
  <./Figures/parallel_vs_distributed.png>] [4] [5] [6] [7]
-<Figures/cpp_firstclass.jpg, id=362, 563.10374pt x 438.63875pt>
+<Figures/cpp_firstclass.jpg, id=369, 563.10374pt x 438.63875pt>
 File: Figures/cpp_firstclass.jpg Graphic file (type jpg)
 <use Figures/cpp_firstclass.jpg>
 Package pdftex.def Info: Figures/cpp_firstclass.jpg  used on input line 57.
 (pdftex.def)             Requested size: 305.33789pt x 237.84528pt.
  [8 <./Figures/cpp_firstclass.jpg>]
-<Figures/dsm.jpg, id=376, 478.78876pt x 379.4175pt>
+<Figures/dsm.jpg, id=383, 478.78876pt x 379.4175pt>
 File: Figures/dsm.jpg Graphic file (type jpg)
 <use Figures/dsm.jpg>
 Package pdftex.def Info: Figures/dsm.jpg  used on input line 74.
@@ -958,7 +973,7 @@ Package pdftex.def Info: Figures/dsm.jpg  used on input line 74.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9]
-<Figures/abi.jpg, id=386, 409.95638pt x 188.66946pt>
+<Figures/abi.jpg, id=393, 409.95638pt x 188.66946pt>
 File: Figures/abi.jpg Graphic file (type jpg)
 <use Figures/abi.jpg>
 Package pdftex.def Info: Figures/abi.jpg  used on input line 85.
@@ -973,7 +988,7 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 98.
 
 [11 <./Figures/abi.jpg>]
-<Figures/stapl_overview.png, id=401, 344.03531pt x 198.7425pt>
+<Figures/stapl_overview.png, id=408, 344.03531pt x 198.7425pt>
 File: Figures/stapl_overview.png Graphic file (type png)
 <use Figures/stapl_overview.png>
 Package pdftex.def Info: Figures/stapl_overview.png  used on input line 126.
@@ -982,7 +997,7 @@ Package pdftex.def Info: Figures/stapl_overview.png  used on input line 126.
 [13]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 153.
-<Figures/charm_arch.jpg, id=434, 480.79625pt x 214.8025pt>
+<Figures/charm_arch.jpg, id=441, 480.79625pt x 214.8025pt>
 File: Figures/charm_arch.jpg Graphic file (type jpg)
 <use Figures/charm_arch.jpg>
 Package pdftex.def Info: Figures/charm_arch.jpg  used on input line 198.
@@ -992,7 +1007,7 @@ Package pdftex.def Info: Figures/charm_arch.jpg  used on input line 198.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14] [15 <./Figures/charm_arch.jpg>]
-<Figures/x10_arch.png, id=502, 560.0925pt x 345.29pt>
+<Figures/x10_arch.png, id=509, 560.0925pt x 345.29pt>
 File: Figures/x10_arch.png Graphic file (type png)
 <use Figures/x10_arch.png>
 Package pdftex.def Info: Figures/x10_arch.png  used on input line 274.
@@ -1001,7 +1016,7 @@ Package pdftex.def Info: Figures/x10_arch.png  used on input line 274.
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-<Figures/chapel_arch.png, id=568, 576.65437pt x 364.36125pt>
+<Figures/chapel_arch.png, id=576, 576.65437pt x 364.36125pt>
 File: Figures/chapel_arch.png Graphic file (type png)
 <use Figures/chapel_arch.png>
 Package pdftex.def Info: Figures/chapel_arch.png  used on input line 309.
@@ -1022,7 +1037,7 @@ Overfull \hbox (71.1797pt too wide) in paragraph at lines 350--352
 ][][][][][][][][][][][][][][] 
  []
 
-<Figures/memcached_arch.jpg, id=603, 481.8pt x 343.2825pt>
+<Figures/memcached_arch.jpg, id=610, 481.8pt x 343.2825pt>
 File: Figures/memcached_arch.jpg Graphic file (type jpg)
 <use Figures/memcached_arch.jpg>
 Package pdftex.def Info: Figures/memcached_arch.jpg  used on input line 365.
@@ -1041,20 +1056,37 @@ Chapter 3.
 
 
 ] [24]
-<Figures/pc2l_architecture.png, id=670, 803.25093pt x 489.32813pt>
+<Figures/pc2l_architecture.png, id=677, 803.25093pt x 489.32813pt>
 File: Figures/pc2l_architecture.png Graphic file (type png)
 <use Figures/pc2l_architecture.png>
-Package pdftex.def Info: Figures/pc2l_architecture.png  used on input line 29.
+Package pdftex.def Info: Figures/pc2l_architecture.png  used on input line 30.
 (pdftex.def)             Requested size: 305.33789pt x 186.01381pt.
- [25 <./Figures/pc2l_architecture.png (PNG copy)>] [26]
+ [25 <./Figures/pc2l_architecture.png (PNG copy)>]
+<eviction_diagram.png, id=685, 644.4075pt x 854.19125pt>
+File: eviction_diagram.png Graphic file (type png)
+<use eviction_diagram.png>
+Package pdftex.def Info: eviction_diagram.png  used on input line 41.
+(pdftex.def)             Requested size: 399.29463pt x 529.30637pt.
+ [26] [27 <./eviction_diagram.png>]
 
-LaTeX Warning: Reference `lst:euler language=C++' on page 27 undefined on input
- line 56.
+LaTeX Warning: Reference `lst:minimal language=C++' on page 28 undefined on inp
+ut line 69.
 
+
+LaTeX Warning: Reference `lst:euler language=C++' on page 28 undefined on input
+ line 69.
+
+[28]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 60.
+put line 72.
 
-Overfull \hbox (382.40242pt too wide) in paragraph at lines 182--183
+Overfull \hbox (123.05016pt too wide) in paragraph at lines 200--201
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (382.40242pt too wide) in paragraph at lines 221--222
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -1062,7 +1094,7 @@ Overfull \hbox (382.40242pt too wide) in paragraph at lines 182--183
  []
 
 
-Overfull \hbox (204.56087pt too wide) in paragraph at lines 183--184
+Overfull \hbox (204.56087pt too wide) in paragraph at lines 222--223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -1070,44 +1102,34 @@ Overfull \hbox (204.56087pt too wide) in paragraph at lines 183--184
  []
 
 
-Overfull \hbox (56.35957pt too wide) in paragraph at lines 190--191
+Overfull \hbox (56.35957pt too wide) in paragraph at lines 229--230
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [27] [28] [29] [30] [31]
+) [29] [30] [31] [32] [33] [34]
 \openout2 = `Chapters/Results.aux'.
 
  (./Chapters/Results.tex
 Chapter 4.
-<Figures/vector_benchmarks_scalability.png, id=754, 1749.53625pt x 1517.67pt>
+<Figures/vector_benchmarks_scalability.png, id=805, 1749.53625pt x 1517.67pt>
 File: Figures/vector_benchmarks_scalability.png Graphic file (type png)
 <use Figures/vector_benchmarks_scalability.png>
 Package pdftex.def Info: Figures/vector_benchmarks_scalability.png  used on inp
 ut line 5.
 (pdftex.def)             Requested size: 305.33789pt x 264.85518pt.
-) [32
+) [35
 
 
 
 
  <./Figures/vector_benchmarks_scalability.png>]
-\openout2 = `Chapters/Discussion.aux'.
-
- (./Chapters/Discussion.tex
-Chapter 5.
-) [33
-
-
-
-
-]
 \openout2 = `Chapters/Conclusion.aux'.
 
  (./Chapters/Conclusion.tex
-Chapter 6.
-) [34
+Chapter 5.
+) [36
 
 
 
@@ -1118,14 +1140,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--52
 pel-[]lang . org / presentations /
  []
 
-[35
+[37
 
 
 
 
-] [36] [37] [38]) [39] (./Thesis.aux (./Chapters/Introduction.aux)
+] [38] [39] [40]) [41] (./Thesis.aux (./Chapters/Introduction.aux)
 (./Chapters/Background.aux) (./Chapters/Methods.aux) (./Chapters/Results.aux)
-(./Chapters/Discussion.aux) (./Chapters/Conclusion.aux))
+(./Chapters/Conclusion.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1135,16 +1157,16 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: EBDEDB7791B447BBF054F576CA0E56CD;4330.
+(rerunfilecheck)             Checksum: EE9E89281B2F3B2093E02B8EFF827365;4466.
  ) 
 Here is how much of TeX's memory you used:
- 35502 strings out of 469515
- 794904 string characters out of 5470807
- 1488577 words of memory out of 5000000
- 63224 multiletter control sequences out of 15000+600000
+ 36058 strings out of 469515
+ 808882 string characters out of 5470807
+ 1515171 words of memory out of 5000000
+ 63747 multiletter control sequences out of 15000+600000
  635986 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,9n,108p,2400b,1268s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,9n,108p,2400b,1279s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1154,10 +1176,10 @@ are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (45 pages, 1131048 bytes).
+Output written on Thesis.pdf (47 pages, 1168069 bytes).
 PDF statistics:
- 950 PDF objects out of 1000 (max. 8388607)
- 847 compressed objects within 9 object streams
- 342 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1002 PDF objects out of 1200 (max. 8388607)
+ 895 compressed objects within 9 object streams
+ 372 named destinations out of 1000 (max. 500000)
+ 342 words of extra memory for PDF output out of 10000 (max. 10000000)
 

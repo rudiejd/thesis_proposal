@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Memcached Architecture from \cite {memcached_linux}}}{21}{figure.caption.30}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture of PC2L}}{25}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of cache eviction in PC2L. User code modifies some part of a data structure and the library opaquely transfers different blocks into memory depending on the selected eviction strategy.}}{27}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces pc2l::Vector Scalability Benchmark}}{32}{figure.caption.41}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces pc2l::Vector Scalability Benchmark}}{35}{figure.caption.43}%
 \addvspace {10\p@ }
